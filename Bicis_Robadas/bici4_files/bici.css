@@ -1,0 +1,513 @@
+#general_bicicleta {
+	background:url("/img/listadoGruposMenu.jpg") no-repeat scroll 0 0 transparent;
+	height:47px;
+	line-height:47px;
+	margin:15px auto 0;
+	overflow:hidden;
+	padding-left:0;
+	width:622px;			
+}
+#general_bicicleta li {
+	float:left;
+	margin-top:9px;
+}
+ul#general_bicicleta li a {
+	background:url("/img/listadoGruposMenuRojoIz.jpg") no-repeat scroll left center transparent;
+	color:#FFFFFF;
+	display:block;
+	font-weight:bold;
+	margin-left:5px;
+	padding-left:5px;
+	text-align:center;
+}
+ul#general_bicicleta li a.primero {
+	margin-left:10px;
+}
+ul#general_bicicleta li a span {
+	background:url("/img/listadoGruposMenuRojoDer.jpg") no-repeat scroll right center transparent;
+	display:block;
+	padding-right:8px;
+}			
+ul#general_bicicleta li a.activo {
+	background:url("/img/listadoGruposMenuGrisIz.jpg") no-repeat scroll left center transparent;
+	color:#C31D16;
+	padding-left:5px;
+}
+ul#general_bicicleta li a.activo span {
+	background:url("/img/listadoGruposMenuGrisDer.jpg") no-repeat scroll right center transparent;
+	display:block;
+	padding-right:7px;
+}
+
+/**
+ * Paginacion
+ */
+div.pag {
+	width:621px;
+	float:right;
+	background-color:#f1f1f1;
+}
+div.pag ol {
+	float:right;
+	margin:0 auto;
+	line-height:29px;
+}
+div.pag li {
+	float:left;
+}
+div.pag li a {
+	display:block;
+	width:18px;
+	padding:2px 3px;
+	height:25px;
+	font-weight:bold;
+}
+div.pag li a.activo {
+	background:url("/img/calPaginacionActivo.jpg") no-repeat 0 8px;
+	font-size:1.5em;
+	padding-right:10px;
+}
+div.pag li a.mas {
+	text-indent:-9999px;
+	padding:2px;
+	background:url("/img/calPaginacionMas.jpg") no-repeat 0 13px;			
+}
+div.pag li a.menos {
+	text-indent:-9999px;
+	padding:2px;
+	background:url("/img/calPaginacionMenos.jpg") no-repeat 0 13px;			
+}
+		
+ul#listado {
+	width:621px;
+	margin:0 auto;
+	padding-left:0;
+}
+ul#listado h3, ul#listado h1 {
+	height:47px;
+	line-height:53px;
+	padding-left:70px;
+	font-size:1.3em;
+	color:#c31d16;
+	background:url("/img/listadoResultadosTitular.jpg") no-repeat left center;
+}
+ul#listado li ul {
+	overflow:hidden;
+	margin-bottom:0;
+	background-color:#f1f1f1;
+}
+ul#listado li ul li {
+	overflow:hidden;
+	padding:20px 0;
+	background:url("/img/calEventosSep.jpg") no-repeat center bottom;	
+}
+ul#listado li ul li.no_background {
+	background:none;
+}
+ul#listado li ul li img {
+	float:left;
+	margin-right:30px;
+}
+ul#listado li ul li div.recuadro {
+	float:left;
+}
+ul#listado li ul li h4 {
+	margin-bottom:10px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+ul#listado li ul li p {
+	margin:0 0 0 15px;
+}
+#listado a {
+	color:#0071BB
+}
+
+#buscadorbicis {
+	width:622px;
+	height:240px;
+	margin:0 auto;
+	padding-left:0;
+}
+#buscadorbicis h3 {
+	width:552px;
+	height:47px;
+	line-height:53px;
+	padding-left:70px;
+	font-size:14px;
+	color:#c31d16;
+	background:url("/img/listadoBuscadorTitular.jpg") no-repeat left center;
+}
+#buscadorbicis h5 {
+	height:25px;
+	font-size:11px;
+}
+				
+#simple_search {
+	width:552px;
+	line-height:35px;
+	padding-left:70px;
+	font-size:11px;
+}
+#simple_search .input_pulldown,
+#simple_search .input_text,
+#simple_search label {
+	font-size:12px;
+	font-weight:normal;
+	color:black;
+}
+#simple_search input[type="submit"]{
+	float:right;
+	margin-right:66px;
+	font-weight:bold;
+}
+#simple_search input[type="text"]{
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:0px;
+	border-right:1px solid #A0A0A0;
+	border-top:1px solid #A0A0A0;
+	padding:1px;
+	width:130px;
+}
+
+div#sidebarR ul {
+	padding-left:16px;
+	padding-bottom:10px;
+}
+div#sidebarR li {
+	margin:0;
+}
+ul.lateralBicis li {
+	font-size:11px;
+	line-height:14px;
+	text-align:center;
+	width:140px;
+	overflow:hidden;
+}
+
+/*
+ * Bike / Component detail
+ */
+ul#listadoInformacion {
+	margin: 20px 0 0 0;
+	padding-left: 0;
+}
+
+ul#ultimasDiscusiones div h4 a,ul#listadoInformacion h4 a,ul#listadoInformacion li.informacion a
+	{
+	color: #29aae1;
+}
+
+ul#listadoInformacion h4 {
+	font-family: Arial;
+}
+
+ul#listadoInformacion li.informacion h4 {
+	font-family: Georgia;
+	height: 34px;
+	padding-top: 5px;
+	margin-bottom: 20px;
+	text-indent: 45px;
+	background: #f1f1f1 url("/img/detalleBiciInformacion.jpg") no-repeat 0 0;
+}
+
+ul#listadoInformacion li.informacion h4.defecto {
+	font-family: Georgia;
+	margin-bottom: 0;
+	text-indent: 20px;
+	background: none;
+}
+
+ul#listadoInformacion li {
+	margin: 0 0 15px 0;
+}
+
+ul#listadoInformacion li.portada {
+	float: left;
+	width: 325px;
+	margin: 0 10px 8px 15px;
+}
+
+ul#listadoInformacion p.footer {
+	color:#333333;
+	float:right;
+	font-size:11px;
+	line-height:14px;
+	margin:0 6px 0 0 !important;
+	text-align:right;
+}
+
+ul#listadoInformacion li.portada div.miniphotobike {
+	padding-left: 30px;
+	width: 290px;
+}
+
+ul#listadoInformacion li.portada div.miniphotobike a {
+	padding-right: 10px;
+}
+
+ul#listadoInformacion li.informacion {
+	overflow: hidden;
+	width: 244px;
+	padding-bottom: 10px;
+	background: #e5e5e5 url("/img/detalleBiciInformacionBottom.jpg") no-repeat 0 bottom;
+}
+
+ul#listadoInformacion li.informacion p {
+	margin: 0 0 2px 20px;
+}
+
+table#tableEspecificaciones {
+	width: 100%;
+	margin-bottom: 40px;
+	border-collapse: collapse;
+}
+
+table#tableEspecificaciones tr,table#tableEspecificaciones th,table#tableEspecificaciones td
+	{
+	padding: 2px;
+	text-align: left;
+}
+
+table#tableEspecificaciones th {
+	font-size: 15px;
+	background-color: #f1f1f1;
+}
+
+table#tableEspecificaciones td:first-child {
+	width: 150px;
+	border-right: 1px solid #f1f1f1;
+}
+
+table#tableEspecificaciones td {
+	background-color: #fff;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+table#tableEspecificaciones th {
+	font-weight: bold;
+}
+
+div#extendida tr.detail {
+	display: none;
+}
+
+div#extendida table.detail_component {
+	background-color: #f1f1f1;
+	padding: 10px;
+	width: 100%;
+}
+
+div#extendida table.detail_component th,div#extendida table.detail_component td
+	{
+	background: none repeat scroll 0 0 #F1F1F1;
+	border: 0 none;
+	font-size: 11px;
+}
+
+div#extendida table.detail_component th {
+	text-align: right;
+}
+
+div#extendida a.link_component {
+	float: right;
+	display: block;
+	height: 19px;
+	width: 129px;
+	margin-right: 5px;
+	line-height: 19px;
+	font-size: 11px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	background: #000 url("/img/detalleEventosBotonNegro.jpg") no-repeat 0 0;
+}
+
+#share_it {
+	width:234px;
+}
+
+h2.subsection_title {
+	font-size:15px;
+	padding:0 10px 10px;
+}
+
+/*
+ * Form user bikes
+ */
+#user_description {
+height:60px;
+}
+p.helptext {
+border-radius:8px;
+background-color:#FAFAFA;
+margin:12px;
+padding:8px;
+position:relative;
+}
+a.accordion-toggle {
+background-color:#333;
+color:white;
+padding:4px !important;
+margin:0 14px;
+border-bottom:1px solid #FAFAFA;
+}
+div.collapse {
+background-color:#FAFAFA;
+margin:0 14px;
+}
+div.components button {
+float: right;
+height: 27px;
+margin-top: 4px;
+margin-right:4px;
+width: 60px;
+}
+div.components input {
+margin-right:6px !important;
+width:280px;
+}
+button.btn {
+float:right;
+margin-right:15px;
+}
+.modal-body label {
+line-height: 35px;
+padding-left: 35px;
+}
+.modal-body select {
+float: right;
+margin-right:60px;
+margin-top:5px;
+width:300px;
+}
+.fields_form label {
+line-height:35px;
+padding-left:35px;
+font-weight:normal;
+font-size:14px;
+}
+.fields_form span {
+color:#CC0000;
+}
+.fields_form select {
+color:#333333;
+float:right;
+height:24px;
+margin-right:40px !important;
+margin-top:8px;
+width:390px;
+}
+.fields_form input, .fields_form textarea {
+float:right;
+font-size:12px !important;
+margin-right:40px !important;
+margin-top:4px;
+width:380px;
+}
+.fields_form textarea {
+height:120px;
+}
+.fields_form.components input {
+margin-right:6px !important;
+width:320px;
+}
+.fields_form.components button {
+float:right;
+width:48px;
+margin-top:4px;
+height:27px;
+}
+.fields_form.components button.delete {
+margin-right:12px !important;
+}
+.fields_form input[type="radio"] {
+float:none;
+margin:0 8px 0 20px !important;
+width:12px;
+}
+#makeselect, #modelselect, #seriesselect, #weightinput {
+float:right;
+}
+#weightinput {
+margin-right:73px;
+}
+#weightinput input[type="text"] {
+float:none;
+margin-right:0 !important;
+width:70px;
+}
+#userbikes_images {
+margin-left:32px;
+}
+
+.bike_created {
+color:#444;
+font-size:11px;
+}
+p.trainings {
+background-color:#fcfcfc;
+margin:10px !important;
+padding:6px 8px;
+font-size:12px;
+border:1px solid #ccc;
+}
+
+div.bike_user_price, div.bike_user_date {
+	color:#C31D16;
+    float:right;
+    font-size:16px;
+    font-weight:bold;
+    margin-right:20px;
+}
+div.bike_user_date {
+	font-size:12px;
+}
+
+.bike_user_extra, #extra_date_field {
+	display:none;
+}
+ul.list_checkboxes {
+    border: 1px solid #CCCCCC;
+    height: auto;
+    margin: 14px 40px 0 0;
+    padding: 10px;
+    width: 370px;
+	float:right;
+}
+ul.list_checkboxes li {
+    float: left;
+    width: 120px;
+}
+ul.list_checkboxes li label {
+    font-size:12px;
+	line-height: 12px;
+    padding: 0;
+}
+ul.list_checkboxes li input {
+    float:none;
+	width:16px;
+	margin-right:5px !important;
+}
+
+#bike_extra_info {
+	margin:12px;
+	padding:16px;
+	background-color:#fcfcfc;
+	border:1px dashed #ccc;
+}
+#bike_extra_info h2 {
+	color:#C31D16;
+}
+#bike_extra_info span {
+	float:right;
+	color:#C31D16;
+	font-weight:bold;
+}
+#bike_extra_info div {
+	margin-top:10px;
+	font-size:14px;
+}
+#bike_extra_info a {
+	float:right;
+}

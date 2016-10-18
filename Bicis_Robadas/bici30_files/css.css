@@ -1,0 +1,4642 @@
+
+/* ***************************************
+	RESET BASE STYLES
+*************************************** */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+ol, ul {
+	list-style: none;
+}
+em, i {
+	font-style:italic;
+}
+/* tables still need cellspacing="0" (for ie6) */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: top;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+.clearfloat {
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+/* ***************************************
+	DEFAULTS
+*************************************** */
+
+/* elgg open source		blue 			#4690d6 */
+/* elgg open source		dark blue 		#0054a7 */
+/* elgg open source		light yellow 	#FDFFC3 */
+/* elgg open source		light blue	 	#bbdaf7 */
+
+img {
+	border: none;
+}
+ul {
+	padding-left: 20px;
+}
+ul li {
+	margin: 0px;
+}
+ol {
+	margin: 5px 0px 15px;
+	padding-left: 20px;
+}
+ul li {
+	margin: 0px;
+}
+form {
+	margin: 0px;
+	padding: 0px;
+}
+small {
+	font-size: 90%;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	line-height: normal;
+}
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.0em; }
+h5 { font-size: 0.9em; }
+h6 { font-size: 0.8em; }
+
+dt {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+dd {
+	margin: 0 0 1em 1em;
+	padding: 0;
+}
+pre, code {
+	font-family:Monaco,"Courier New",Courier,monospace;
+	font-size:12px;
+	background:#EBF5FF;
+	overflow:auto;
+
+	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+
+}
+code {
+	padding:2px 3px;
+}
+pre {
+	padding:3px 15px;
+	margin:0px 0 15px 0;
+	line-height:1.3em;
+}
+blockquote {
+	padding:3px 15px;
+	margin:0px 0 15px 0;
+	line-height:1.3em;
+	background:#EBF5FF;
+	border:none !important;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+blockquote p {
+	margin:0 0 5px 0;
+}
+
+/* ***************************************
+	PAGE LAYOUT - MAIN STRUCTURE
+*************************************** */
+#page_container {
+	margin:0;
+	padding:0;
+}
+#page_wrapper {
+	margin:0 auto;
+	padding:0;
+	width:990px;
+}
+#layout_canvas {
+	margin:0 auto;
+	width:990px;
+}
+
+
+/* canvas layout: 1 column, no sidebar */
+#one_column {
+/* 	width:928px; */
+	margin:0;
+	min-height: 360px;
+	background: #dedede;
+	padding:0 0 10px 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+/* canvas layout: 2 column left sidebar */
+#two_column_left_sidebar {
+	width:210px;
+	margin:0 20px 0 0;
+	min-height:360px;
+	float:left;
+	background: #dedede;
+	padding:0px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-bottom:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+}
+
+#two_column_left_sidebar_maincontent {
+	width:718px;
+	margin:0;
+	min-height: 360px;
+	float:left;
+	background: #dedede;
+	padding:0 0 5px 0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+
+
+
+#two_column_left_sidebar_maincontent_boxes {
+	margin:0 0px 20px 20px;
+	padding:0 0 5px 0;
+	width:718px;
+	background: #dedede;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	float:left;
+}
+#two_column_left_sidebar_boxes {
+	width:210px;
+	margin:0px 0 20px 0px;
+	min-height:360px;
+	float:left;
+	padding:0;
+}
+#two_column_left_sidebar_boxes .sidebarBox {
+	margin:0px 0 22px 0;
+	background: #dedede;
+	padding:4px 10px 10px 10px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-bottom:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+}
+#two_column_left_sidebar_boxes .sidebarBox h3 {
+	padding:0 0 5px 0;
+	font-size:1.25em;
+	line-height:1.2em;
+	color:#0054A7;
+}
+
+/* canvas layout: 2 column right sidebar */
+#two_column_right_sidebar {
+	width:210px;
+	margin:0 0 0 20px;
+	min-height:360px;
+	float:left;
+	background: #dedede;
+	padding:0px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-bottom:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+}
+
+
+.contentWrapper {
+	background:white;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding:10px;
+	margin:0 10px 10px 10px;
+}
+span.contentIntro p {
+	margin:0 0 0 0;
+}
+.notitle {
+	margin-top:10px;
+}
+
+/* canvas layout: widgets (profile and dashboard) */
+#widgets_left {
+	width:303px;
+	margin:0 20px 20px 0;
+	min-height:360px;
+	padding:0;
+}
+#widgets_middle {
+	width:303px;
+	margin:0 0 20px 0;
+	padding:0;
+}
+#widgets_right {
+	width:303px;
+	margin:0px 0 20px 20px;
+	float:left;
+	padding:0;
+}
+#widget_table td {
+	border:0;
+	padding:0;
+	margin:0;
+	text-align: left;
+	vertical-align: top;
+}
+/* IE6 fixes */
+* html #widgets_right { float:none; }
+* html #profile_info_column_left {
+	margin:0 10px 0 0;
+	width:200px;
+}
+* html #dashboard_info { width:585px; }
+/* IE7 */
+*:first-child+html #profile_info_column_left { width:200px; }
+
+
+/* ***************************************
+	SPOTLIGHT
+*************************************** */
+#layout_spotlight {
+	margin:20px 0 20px 0;
+	padding:0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	background: white;
+	border-bottom:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+}
+#wrapper_spotlight {
+	margin:0;
+	padding:0;
+	height:auto;
+}
+#wrapper_spotlight #spotlight_table h2 {
+	color:#4690d6;
+	font-size:1.25em;
+	line-height:1.2em;
+}
+#wrapper_spotlight #spotlight_table li {
+	list-style: square;
+	line-height: 1.2em;
+	margin:5px 20px 5px 0;
+	color:#4690d6;
+}
+#wrapper_spotlight .collapsable_box_content  {
+	margin:0;
+	padding:10px 10px 5px 10px;
+	background:none;
+	min-height:60px;
+	border:none;
+	border-top:1px solid #cccccc;
+}
+#spotlight_table {
+	margin:0 0 2px 0;
+}
+#spotlight_table .spotlightRHS {
+	float:right;
+	width:270px;
+	margin:0 0 0 50px;
+}
+/* IE7 */
+*:first-child+html #wrapper_spotlight .collapsable_box_content {
+	width:958px;
+}
+#layout_spotlight .collapsable_box_content p {
+	padding:0;
+}
+#wrapper_spotlight .collapsable_box_header  {
+	border: none;
+	background: none;
+}
+
+
+/* ***************************************
+HORIZONTAL ELGG TOPBAR
+*************************************** */
+#elgg_topbar {
+	background:#333333 url(http://www.redciclista.com/_graphics/toptoolbar_background.gif) repeat-x top left;
+	color:#eeeeee;
+	border-bottom:1px solid #000000;
+	min-width:998px;
+	position:relative;
+	width:100%;
+	height:24px;
+	z-index: 9000; /* if you have multiple position:relative elements, then IE sets up separate Z layer contexts for each one, which ignore each other */
+}
+#elgg_topbar_container_left {
+	float:left;
+	height:24px;
+	left:0px;
+	top:0px;
+	position:absolute;
+	text-align:left;
+	width:60%;
+}
+#elgg_topbar_container_right {
+	float:right;
+	height:24px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	/* width:120px;*/
+	text-align:right;
+}
+#elgg_topbar_container_search {
+	float:right;
+	height:21px;
+	/*width:280px;*/
+	position:relative;
+	right:120px;
+	text-align:right;
+	margin:3px 0 0 0;
+}
+#elgg_topbar_container_left .toolbarimages {
+	float:left;
+	margin-right:20px;
+}
+#elgg_topbar_container_left .toolbarlinks {
+	margin:0 0 10px 0;
+	float:left;
+}
+#elgg_topbar_container_left .toolbarlinks2 {
+	margin:3px 0 0 0;
+	float:left;
+}
+#elgg_topbar_container_left a.loggedinuser {
+	color:#eeeeee;
+	font-weight:bold;
+	margin:0 0 0 5px;
+}
+#elgg_topbar_container_left a.pagelinks {
+	color:white;
+	margin:0 15px 0 5px;
+	display:block;
+	padding:3px;
+}
+#elgg_topbar_container_left a.pagelinks:hover {
+	background: #4690d6;
+	text-decoration: none;
+}
+#elgg_topbar_container_left a.privatemessages {
+	background:transparent url(http://www.redciclista.com/_graphics/toolbar_messages_icon.gif) no-repeat left 2px;
+	padding:0 0 4px 16px;
+	margin:0 15px 0 5px;
+	cursor:pointer;
+}
+#elgg_topbar_container_left a.privatemessages:hover {
+	text-decoration: none;
+	background:transparent url(http://www.redciclista.com/_graphics/toolbar_messages_icon.gif) no-repeat left -36px;
+}
+#elgg_topbar_container_left a.privatemessages_new {
+	background:transparent url(http://www.redciclista.com/_graphics/toolbar_messages_icon.gif) no-repeat left -17px;
+	padding:0 0 0 18px;
+	margin:0 15px 0 5px;
+	color:white;
+}
+/* IE6 */
+* html #elgg_topbar_container_left a.privatemessages_new { background-position: left -18px; }
+/* IE7 */
+*+html #elgg_topbar_container_left a.privatemessages_new { background-position: left -18px; }
+
+#elgg_topbar_container_left a.privatemessages_new:hover {
+	text-decoration: none;
+}
+
+#elgg_topbar_container_left a.usersettings {
+	margin:0 0 0 20px;
+	color:#999999;
+	padding:3px;
+}
+#elgg_topbar_container_left a.usersettings:hover {
+	color:#eeeeee;
+}
+#elgg_topbar_container_left img {
+	margin:0 0 0 5px;
+}
+#elgg_topbar_container_left .user_mini_avatar {
+	border:1px solid #eeeeee;
+	margin:0 0 0 20px;
+}
+#elgg_topbar_container_right {
+	padding:3px 0 0 0;
+}
+#elgg_topbar_container_right a {
+	color:#eeeeee;
+	margin:0 5px 0 0;
+	background:transparent url(http://www.redciclista.com/_graphics/elgg_toolbar_logout.gif) no-repeat top right;
+	padding:0 21px 0 0;
+	display:block;
+	height:20px;
+}
+/* IE6 fix */
+* html #elgg_topbar_container_right a {
+	width: 120px;
+}
+#elgg_topbar_container_right a:hover {
+	background-position: right -21px;
+}
+#elgg_topbar_panel {
+	background:#333333;
+	color:#eeeeee;
+	height:200px;
+	width:100%;
+	padding:10px 20px 10px 20px;
+	display:none;
+	position:relative;
+}
+
+
+/* ***************************************
+	TOP BAR - VERTICAL TOOLS MENU
+*************************************** */
+/* elgg toolbar menu setup */
+ul.topbardropdownmenu, ul.topbardropdownmenu ul {
+	margin:0;
+	padding:0;
+	display:inline;
+	float:left;
+	list-style-type: none;
+	z-index: 9000;
+	position: relative;
+}
+ul.topbardropdownmenu {
+	margin:0pt 20px 0pt 5px;
+}
+ul.topbardropdownmenu li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	position: relative;
+}
+ul.topbardropdownmenu a {
+	display:block;
+}
+ul.topbardropdownmenu ul {
+	display: none;
+	position: absolute;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+/* IE6 fix */
+* html ul.topbardropdownmenu ul {
+	line-height: 1.1em;
+}
+/* IE6/7 fix */
+ul.topbardropdownmenu ul a {
+	zoom: 1;
+}
+ul.topbardropdownmenu ul li {
+	float: none;
+}
+/* elgg toolbar menu style */
+ul.topbardropdownmenu ul {
+	width: 150px;
+	top: 24px;
+	border-top:1px solid black;
+}
+ul.topbardropdownmenu *:hover {
+	background-color: none;
+}
+ul.topbardropdownmenu a {
+	padding:3px;
+	text-decoration:none;
+	color:white;
+}
+ul.topbardropdownmenu li.hover a {
+	background-color: #4690d6;
+	text-decoration: none;
+}
+ul.topbardropdownmenu ul li.drop a {
+	font-weight: normal;
+}
+/* IE7 fixes */
+*:first-child+html #elgg_topbar_container_left a.pagelinks {
+
+}
+*:first-child+html ul.topbardropdownmenu li.drop a.menuitemtools {
+	padding-bottom:6px;
+}
+ul.topbardropdownmenu ul li a {
+	background-color: #999999;/* menu off state color */
+	font-weight: bold;
+	padding-left:6px;
+	padding-top:4px;
+	padding-bottom:0;
+	height:22px;
+	border-bottom: 1px solid white;
+}
+ul.topbardropdownmenu ul a.hover {
+	background-color: #333333;
+}
+ul.topbardropdownmenu ul a {
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+
+
+/* ***************************************
+SYSTEM MESSSAGES
+*************************************** */
+.messages {
+	-moz-border-radius:4px 4px 4px 4px;
+	background:url("/img/ico_confirm.png") no-repeat scroll 2px 2px #008800;
+	border:4px solid #007700;
+	color:white;
+	cursor:pointer;
+	display:inline-block;
+	left:180px;
+	margin:0 auto;
+	min-height:70px;
+	padding:3px 10px;
+	position:absolute;
+	top:30px;
+	width:600px;
+	z-index:8000;
+}
+.messages p, .messages_error p {
+	margin-left:60px;
+}
+.messages_error {
+	border:4px solid #800;
+	background:url(/img/ico_error.png) no-repeat scroll 2px 2px #A81712;
+	color:white;
+	padding:3px 10px;
+	z-index: 8000;
+	margin:0 auto;
+	position:relative;
+	top:30px;
+	width:600px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	cursor: pointer;
+	min-height:140px;
+}
+.closeMessages {
+	bottom:0;
+	float:right;
+	position:absolute;
+	right:5px;
+}
+.closeMessages a {
+	color:#EEE;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 80%;
+}
+.closeMessages a:hover {
+	color:white;
+}
+
+.elgg-admin-notices {
+        padding-bottom: 15px;
+}
+.elgg-admin-notices p {
+        background-color: #BDE5F8;
+        color: black;
+        border: 1px solid blue;
+        font-weight: bold;
+        padding: 3px 0 3px 10px;
+
+        -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+        -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+}
+.elgg-admin-notices a.elgg-admin-notice {
+        float: right;
+        text-decoration: none;
+        border: 1px solid blue;
+        border-radius: 10px;
+        padding: 0 4px 2px;
+        line-height: 14px;
+        margin-right: 3px;
+        color: black;
+}
+
+.elgg-admin-notices a {
+        text-decoration: underline;
+}
+
+/* ***************************************
+COLLAPSABLE BOXES
+*************************************** */
+.collapsable_box {
+	margin: 0 0 20px 0;
+	height:auto;
+
+}
+/* IE6 fix */
+* html .collapsable_box  {
+	height:10px;
+}
+.collapsable_box_header {
+	color: #4690d6;
+	padding: 5px 10px 5px 10px;
+	margin:0;
+	border-left: 1px solid white;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	-moz-border-radius-topleft:8px;
+	-moz-border-radius-topright:8px;
+	-webkit-border-top-right-radius:8px;
+	-webkit-border-top-left-radius:8px;
+	background:#dedede;
+}
+.collapsable_box_header h1 {
+	color: #0054a7;
+	font-size:1.25em;
+	line-height: 1.2em;
+}
+.collapsable_box_content {
+	padding: 10px 0 10px 0;
+	margin:0;
+	height:auto;
+	background:#dedede;
+	-moz-border-radius-bottomleft:8px;
+	-moz-border-radius-bottomright:8px;
+	-webkit-border-bottom-right-radius:8px;
+	-webkit-border-bottom-left-radius:8px;
+	border-left: 1px solid white;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+.collapsable_box_content .contentWrapper {
+	margin-bottom:5px;
+}
+.collapsable_box_editpanel {
+	display: none;
+	background: #a8a8a8;
+	padding:10px 10px 5px 10px;
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+}
+.collapsable_box_editpanel p {
+	margin:0 0 5px 0;
+}
+.collapsable_box_header a.toggle_box_contents {
+	color: #4690d6;
+	cursor:pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:20px;
+	font-weight: bold;
+	text-decoration:none;
+	float:right;
+	margin: 0;
+	margin-top: -7px;
+}
+.collapsable_box_header a.toggle_box_edit_panel {
+	color: #4690d6;
+	cursor:pointer;
+	font-size:9px;
+	text-transform: uppercase;
+	text-decoration:none;
+	font-weight: normal;
+	float:right;
+	margin: 3px 10px 0 0;
+}
+.collapsable_box_editpanel label {
+	font-weight: normal;
+	font-size: 100%;
+}
+/* used for collapsing a content box */
+.display_none {
+	display:none;
+}
+/* used on spotlight box - to cancel default box margin */
+.no_space_after {
+	margin: 0 0 0 0;
+}
+
+
+
+/* ***************************************
+	GENERAL FORM ELEMENTS
+*************************************** */
+label {
+	font-weight: bold;
+	color:#333333;
+	font-size: 120%;
+}
+input[type=text], input[type="password"], input[type="date"], input[type="url"], input[type="email"], input[type="file"] {
+	font: 120% Arial, Helvetica, sans-serif;
+	padding: 5px;
+	border: 1px solid #cccccc;
+	color:#666666;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+input[type="checkbox"] {
+	padding: 1px;
+	border-style: none;
+}
+textarea {
+	font: 120% Arial, Helvetica, sans-serif;
+	border: solid 1px #cccccc;
+	padding: 5px;
+	color:#666666;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+textarea:focus, input[type="text"]:focus {
+	border: solid 1px #4690d6;
+	background-color: #e4ecf5;
+	color:#333333;
+}
+
+.submit_button {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	background:#4690d6;
+	border: 1px solid #4690d6;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	width: auto;
+	height: 25px;
+	padding: 2px 6px 2px 6px;
+	margin:10px 0 10px 0;
+	cursor: pointer;
+}
+.submit_button:hover {
+	background: #0054a7;
+	border-color: #0054a7;
+}
+
+.cancel_button {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #999999;
+	background:#dddddd;
+	border: 1px solid #999999;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	width: auto;
+	height: 25px;
+	padding: 2px 6px 2px 6px;
+	margin:10px 0 10px 10px;
+	cursor: pointer;
+}
+.cancel_button:hover {
+	background: #cccccc;
+}
+
+.input-password,
+.input-text,
+.input-tags,
+.input-url,
+.input-textarea {
+	width:98%;
+}
+
+.input-textarea {
+	height: 200px;
+}
+
+
+/* ***************************************
+	LOGIN / REGISTER
+*************************************** */
+#login-box form {
+	margin:0 10px 0 10px;
+	padding:0 10px 4px 10px;
+	background: white;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	width:200px;
+}
+#login-box h2 {
+	color:#0054A7;
+	font-size:1.35em;
+	line-height:1.2em;
+	margin:0 0 0 8px;
+	padding:5px 5px 0 5px;
+}
+#login-box .login-textarea {
+	width:178px;
+}
+#login-box label,
+#register-box label {
+	font-size: 1.2em;
+	color:gray;
+}
+#login-box p.loginbox {
+	margin:0;
+}
+#login-box input[type="text"],
+#login-box input[type="password"],
+#register-box input[type="text"],
+#register-box input[type="password"] {
+	margin:0 0 10px 0;
+}
+#register-box input[type="text"],
+#register-box input[type="password"] {
+	width:380px;
+}
+#login-box h2,
+#login-box-openid h2,
+#register-box h2,
+#add-box h2,
+#forgotten_box h2 {
+	color:#0054A7;
+	font-size:1.35em;
+	line-height:1.2em;
+	margin:0pt 0pt 5px;
+}
+#register-box {
+	text-align:left;
+	width:400px;
+	padding:10px;
+	background: #dedede;
+	margin:0;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#persistent_login label {
+	font-size:1.0em;
+	font-weight: normal;
+}
+/* login and openID boxes when not running custom_index mod */
+#two_column_left_sidebar #login-box {
+	width:auto;
+	background: none;
+}
+#two_column_left_sidebar #login-box form {
+	width:auto;
+	margin:10px 10px 0 10px;
+	padding:5px 0 5px 10px;
+}
+#two_column_left_sidebar #login-box h2 {
+	margin:0 0 0 5px;
+	padding:5px 5px 0 5px;
+}
+#two_column_left_sidebar #login-box .login-textarea {
+	width:158px;
+}
+/* login and openID boxes when not running custom_index mod */
+#two_column_right_sidebar #login-box {
+	width:auto;
+	background: none;
+}
+#two_column_right_sidebar #login-box form {
+	width:auto;
+	margin:10px 10px 0 10px;
+	padding:5px 0 5px 10px;
+}
+#two_column_right_sidebar #login-box h2 {
+	margin:0 0 0 5px;
+	padding:5px 5px 0 5px;
+}
+#two_column_right_sidebar #login-box .login-textarea {
+	width:158px;
+}
+
+/* ***************************************
+	PROFILE
+*************************************** */
+#profile_info {
+	margin:0 0 20px 0;
+	padding:20px;
+	border-bottom:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	background: #e9e9e9;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#profile_info_column_left {
+	float:left;
+	padding: 0;
+	margin:0 20px 0 0;
+}
+#profile_info_column_middle {
+	float:left;
+	width:365px;
+	padding: 0;
+}
+#profile_info_column_right {
+	width:578px;
+	margin:0 0 0 0;
+	background:#dedede;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	padding:4px;
+}
+#dashboard_info {
+	margin:0px 0px 0 0px;
+	padding:20px;
+	border-bottom:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	background: #bbdaf7;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#profile_menu_wrapper {
+	margin:10px 0 10px 0;
+	width:200px;
+}
+#profile_menu_wrapper p {
+	border-bottom:1px solid #cccccc;
+}
+#profile_menu_wrapper p:first-child {
+	border-top:1px solid #cccccc;
+}
+#profile_menu_wrapper a {
+	display:block;
+	padding:0 0 0 3px;
+}
+#profile_menu_wrapper a:hover {
+	color:#ffffff;
+	background:#4690d6;
+	text-decoration:none;
+}
+p.user_menu_friends, p.user_menu_profile,
+p.user_menu_removefriend,
+p.user_menu_friends_of {
+	margin:0;
+}
+#profile_menu_wrapper .user_menu_admin {
+	border-top:none;
+}
+
+#profile_info_column_middle p {
+	margin:7px 0 7px 0;
+	padding:2px 4px 2px 4px;
+}
+/* profile owner name */
+#profile_info_column_middle h2 {
+	padding:0 0 14px 0;
+	margin:0;
+}
+#profile_info_column_middle .profile_status {
+	background:#bbdaf7;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	padding:2px 4px 2px 4px;
+	line-height:1.2em;
+}
+#profile_info_column_middle .profile_status span {
+	display:block;
+	font-size:90%;
+	color:#666666;
+}
+#profile_info_column_middle a.status_update {
+	float:right;
+}
+#profile_info_column_middle .odd {
+	background:#dedede;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+#profile_info_column_middle .even {
+	background:#dedede;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+#profile_info_column_right p {
+	margin:0 0 7px 0;
+}
+#profile_info_column_right .profile_aboutme_title {
+	margin:0;
+	padding:0;
+	line-height:1em;
+}
+/* edit profile button */
+.profile_info_edit_buttons {
+	float:right;
+	margin:0  !important;
+	padding:0 !important;
+}
+.profile_info_edit_buttons a {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	background:#4690d6;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	width: auto;
+	padding: 2px 6px 2px 6px;
+	margin:0;
+	cursor: pointer;
+}
+.profile_info_edit_buttons a:hover {
+	background: #0054a7;
+	text-decoration: none;
+	color:white;
+}
+
+
+/* ***************************************
+	RIVER
+*************************************** */
+#river,
+.river_item_list {
+	border-top:1px solid #dddddd;
+
+	overflow:hidden;
+}
+.river_item p {
+	margin:0;
+	padding:0 0 0 21px;
+	line-height:1.1em;
+	min-height:17px;
+}
+.river_item {
+	border-bottom:1px solid #dddddd;
+	padding:2px 0 2px 0;
+}
+.river_item_time {
+	font-size:90%;
+	color:#666666;
+}
+.river_item .river_item_useravatar {
+	float:left;
+	margin:0 5px 0 0;
+}
+/* IE6 fix */
+* html .river_item p {
+	padding:3px 0 3px 20px;
+}
+/* IE7 */
+*:first-child+html .river_item p {
+	min-height:17px;
+}
+.river_user_update {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_profile.gif) no-repeat left -1px;
+}
+.river_object_user_profileupdate {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_profile.gif) no-repeat left -1px;
+}
+.river_object_user_profileiconupdate {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_profile.gif) no-repeat left -1px;
+}
+.river_object_annotate {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_object_bookmarks_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_bookmarks.gif) no-repeat left -1px;
+}
+.river_object_bookmarks_comment {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_object_status_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_status.gif) no-repeat left -1px;
+}
+.river_object_file_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_files.gif) no-repeat left -1px;
+}
+.river_object_file_update {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_files.gif) no-repeat left -1px;
+}
+.river_object_file_comment {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_object_widget_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_plugin.gif) no-repeat left -1px;
+}
+.river_object_forums_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_object_forums_update {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_object_widget_update {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_plugin.gif) no-repeat left -1px;
+}
+.river_object_blog_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_blog.gif) no-repeat left -1px;
+}
+.river_object_blog_update {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_blog.gif) no-repeat left -1px;
+}
+.river_object_blog_comment {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_object_forumtopic_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_user_friend {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_friends.gif) no-repeat left -1px;
+}
+.river_object_relationship_friend_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_friends.gif) no-repeat left -1px;
+}
+.river_object_relationship_member_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_object_thewire_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_thewire.gif) no-repeat left -1px;
+}
+.river_group_join {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_object_groupforumtopic_annotate {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_object_groupforumtopic_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_forum.gif) no-repeat left -1px;
+}
+.river_object_sitemessage_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_blog.gif) no-repeat left -1px;
+}
+.river_user_messageboard {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_object_page_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_pages.gif) no-repeat left -1px;
+}
+.river_object_page_update {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_pages.gif) no-repeat left -1px;
+}
+.river_object_page_top_create {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_pages.gif) no-repeat left -1px;
+}
+.river_object_page_top_update {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_pages.gif) no-repeat left -1px;
+}
+.river_object_page_top_comment {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_object_page_comment {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+
+/* ***************************************
+	ENTITY LISTINGS
+*************************************** */
+.search_listing {
+	display: block;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	background:white;
+	margin:0 10px 5px 10px;
+	padding:5px;
+}
+.search_listing_icon {
+	float:left;
+}
+.search_listing_icon img {
+	width: 40px;
+}
+.search_listing_icon .avatar_menu_button img {
+	width: 15px;
+}
+.search_listing_info {
+	margin-left: 50px;
+	min-height: 40px;
+}
+/* IE 6 fix */
+* html .search_listing_info {
+	height:40px;
+}
+.search_listing_info p {
+	margin:0 0 3px 0;
+	line-height:1.2em;
+}
+.search_listing_info p.owner_timestamp {
+	margin:0;
+	padding:0;
+	color:#666666;
+	font-size: 90%;
+}
+table.entity_gallery {
+	border-spacing: 10px;
+	margin:0 0 0 0;
+}
+.entity_gallery td {
+	padding: 5px;
+}
+.entity_gallery_item {
+	background: white;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	width:170px;
+}
+.entity_gallery_item:hover {
+	background: black;
+	color:white;
+}
+.entity_gallery_item .search_listing {
+	background: none;
+	text-align: center;
+}
+.entity_gallery_item .search_listing_header {
+	text-align: center;
+}
+.entity_gallery_item .search_listing_icon {
+	position: relative;
+	text-align: center;
+}
+.entity_gallery_item .search_listing_info {
+	margin: 5px;
+}
+.entity_gallery_item .search_listing_info p {
+	margin: 5px;
+	margin-bottom: 10px;
+}
+.entity_gallery_item .search_listing {
+	background: none;
+	text-align: center;
+}
+.entity_gallery_item .search_listing_icon {
+	position: absolute;
+	margin-bottom: 20px;
+}
+.entity_gallery_item .search_listing_info {
+	margin: 5px;
+}
+.entity_gallery_item .search_listing_info p {
+	margin: 5px;
+	margin-bottom: 10px;
+}
+
+
+/* ***************************************
+	FRIENDS
+*************************************** */
+/* friends widget */
+#widget_friends_list {
+	display:table;
+	width:275px;
+	margin:0 10px 0 10px;
+	padding:8px 0 4px 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	background:white;
+}
+.widget_friends_singlefriend {
+	float:left;
+	margin:0 5px 5px 0;
+}
+
+
+/* ***************************************
+	ADMIN AREA - PLUGIN SETTINGS
+*************************************** */
+.plugin_details {
+	margin:0 10px 5px 10px;
+	padding:0 7px 4px 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+.admin_plugin_reorder {
+	float:right;
+	width:200px;
+	text-align: right;
+}
+.admin_plugin_reorder a {
+	padding-left:10px;
+	font-size:80%;
+	color:#999999;
+}
+.plugin_details a.pluginsettings_link {
+	cursor:pointer;
+	font-size:80%;
+}
+/*.active {
+	border:1px solid #999999;
+	background:white;
+}*/
+.not-active {
+	border:1px solid #999999;
+	background:#dedede;
+}
+.plugin_details p {
+	margin:0;
+	padding:0;
+}
+.plugin_details a.manifest_details {
+	cursor:pointer;
+	font-size:80%;
+}
+.manifest_file {
+	background:#dedede;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding:5px 10px 5px 10px;
+	margin:4px 0 4px 0;
+	display:none;
+}
+.admin_plugin_enable_disable {
+	width:150px;
+	margin:10px 0 0 0;
+	float:right;
+	text-align: right;
+}
+.contentIntro .enableallplugins,
+.contentIntro .disableallplugins {
+	float:right;
+}
+.contentIntro .enableallplugins {
+	margin-left:10px;
+}
+.contentIntro .enableallplugins,
+.not-active .admin_plugin_enable_disable a {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	background:#4690d6;
+	border: 1px solid #4690d6;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	width: auto;
+	padding: 4px;
+	cursor: pointer;
+}
+.contentIntro .enableallplugins:hover,
+.not-active .admin_plugin_enable_disable a:hover {
+	background: #0054a7;
+	border: 1px solid #0054a7;
+	text-decoration: none;
+}
+.contentIntro .disableallplugins,
+.active .admin_plugin_enable_disable a {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	background:#999999;
+	border: 1px solid #999999;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	width: auto;
+	padding: 4px;
+	cursor: pointer;
+}
+.contentIntro .disableallplugins:hover,
+.active .admin_plugin_enable_disable a:hover {
+	background: #333333;
+	border: 1px solid #333333;
+	text-decoration: none;
+}
+.pluginsettings {
+	margin:15px 0 5px 0;
+	background:#bbdaf7;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding:10px;
+	display:none;
+}
+.pluginsettings h3 {
+	padding:0 0 5px 0;
+	margin:0 0 5px 0;
+	border-bottom:1px solid #999999;
+}
+#updateclient_settings h3 {
+	padding:0;
+	margin:0;
+	border:none;
+}
+.input-access {
+	margin:5px 0 0 0;
+}
+
+/* ***************************************
+	GENERIC COMMENTS
+*************************************** */
+.generic_comment_owner {
+	font-size: 90%;
+	color:#666666;
+}
+.generic_comment {
+	background:white;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding:10px;
+	margin:0 10px 10px 10px;
+}
+.generic_comment_icon {
+	float:left;
+}
+.generic_comment_details {
+	margin-left: 60px;
+}
+.generic_comment_details p {
+	margin: 0 0 5px 0;
+}
+.generic_comment_owner {
+	color:#666666;
+	margin: 0px;
+	font-size:90%;
+	border-top: 1px solid #aaaaaa;
+}
+/* IE6 */
+* html #generic_comment_tbl { width:676px !important;}
+
+
+/* ***************************************
+PAGE-OWNER BLOCK
+*************************************** */
+#owner_block {
+	padding:10px;
+}
+#owner_block_icon {
+	float:left;
+	margin:0 10px 0 0;
+}
+#owner_block_rss_feed,
+#owner_block_odd_feed {
+	padding:5px 0 0 0;
+}
+#owner_block_rss_feed a {
+	font-size: 90%;
+	color:#999999;
+	padding:0 0 4px 20px;
+	background: url(http://www.redciclista.com/_graphics/icon_rss.gif) no-repeat left top;
+}
+#owner_block_odd_feed a {
+	font-size: 90%;
+	color:#999999;
+	padding:0 0 4px 20px;
+	background: url(http://www.redciclista.com/_graphics/icon_odd.gif) no-repeat left top;
+}
+#owner_block_rss_feed a:hover,
+#owner_block_odd_feed a:hover {
+	color: #0054a7;
+}
+#owner_block_desc {
+	padding:4px 0 4px 0;
+	margin:0 0 0 0;
+	line-height: 1.2em;
+	border-bottom:1px solid #cccccc;
+	color:#666666;
+}
+#owner_block_content {
+	margin:0 0 4px 0;
+	padding:3px 0 0 0;
+	min-height:35px;
+	font-weight: bold;
+}
+#owner_block_content a {
+	line-height: 1em;
+}
+.ownerblockline {
+	padding:0;
+	margin:0;
+	border-bottom:1px solid #cccccc;
+	height:1px;
+}
+#owner_block_submenu {
+	margin:20px 0 20px 0;
+	padding: 0;
+	width:100%;
+}
+#owner_block_submenu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#owner_block_submenu ul li.selected a {
+	background: #4690d6;
+	color:white;
+}
+#owner_block_submenu ul li.selected a:hover {
+	background: #4690d6;
+	color:white;
+}
+#owner_block_submenu ul li a {
+	text-decoration: none;
+	display: block;
+	margin: 2px 0 0 0;
+	color:#4690d6;
+	padding:4px 6px 4px 10px;
+	font-weight: bold;
+	line-height: 1.1em;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+#owner_block_submenu ul li a:hover {
+	color:white;
+	background: #0054a7;
+}
+
+/* IE 6 + 7 menu arrow position fix */
+* html #owner_block_submenu ul li.selected a {
+	background-position: left 10px;
+}
+*:first-child+html #owner_block_submenu ul li.selected a {
+	background-position: left 8px;
+}
+
+#owner_block_submenu .submenu_group {
+	border-bottom: 1px solid #cccccc;
+	margin:10px 0 0 0;
+	padding-bottom: 10px;
+}
+
+#owner_block_submenu .submenu_group .submenu_group_filter ul li a,
+#owner_block_submenu .submenu_group .submenu_group_filetypes ul li a {
+	color:#666666;
+}
+#owner_block_submenu .submenu_group .submenu_group_filter ul li.selected a,
+#owner_block_submenu .submenu_group .submenu_group_filetypes ul li.selected a {
+	background:#999999;
+	color:white;
+}
+#owner_block_submenu .submenu_group .submenu_group_filter ul li a:hover,
+#owner_block_submenu .submenu_group .submenu_group_filetypes ul li a:hover {
+	color:white;
+	background: #999999;
+}
+
+
+/* ***************************************
+	PAGINATION
+*************************************** */
+.pagination {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	background:white;
+	margin:5px 10px 5px 10px;
+	padding:5px;
+}
+.pagination .pagination_number {
+	display:block;
+	float:left;
+	background:#ffffff;
+	border:1px solid #4690d6;
+	text-align: center;
+	color:#4690d6;
+	font-size: 12px;
+	font-weight: normal;
+	margin:0 6px 0 0;
+	padding:0px 4px;
+	cursor: pointer;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+.pagination .pagination_number:hover {
+	background:#4690d6;
+	color:white;
+	text-decoration: none;
+}
+.pagination .pagination_more {
+	display:block;
+	float:left;
+	background:#ffffff;
+	border:1px solid #ffffff;
+	text-align: center;
+	color:#4690d6;
+	font-size: 12px;
+	font-weight: normal;
+	margin:0 6px 0 0;
+	padding:0px 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+.pagination .pagination_previous,
+.pagination .pagination_next {
+	display:block;
+	float:left;
+	border:1px solid #4690d6;
+	color:#4690d6;
+	text-align: center;
+	font-size: 12px;
+	font-weight: normal;
+	margin:0 6px 0 0;
+	padding:0px 4px;
+	cursor: pointer;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+.pagination .pagination_previous:hover,
+.pagination .pagination_next:hover {
+	background:#4690d6;
+	color:white;
+	text-decoration: none;
+}
+.pagination .pagination_currentpage {
+	display:block;
+	float:left;
+	background:#4690d6;
+	border:1px solid #4690d6;
+	text-align: center;
+	color:white;
+	font-size: 12px;
+	font-weight: bold;
+	margin:0 6px 0 0;
+	padding:0px 4px;
+	cursor: pointer;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+
+/* ***************************************
+	FRIENDS COLLECTIONS ACCORDIAN
+*************************************** */
+ul#friends_collections_accordian {
+	margin: 0 0 0 0;
+	padding: 0;
+}
+#friends_collections_accordian li {
+	margin: 0 0 0 0;
+	padding: 0;
+	list-style-type: none;
+	color: #666666;
+}
+#friends_collections_accordian li h2 {
+	background:#4690d6;
+	color: white;
+	padding:4px 2px 4px 6px;
+	margin:10px 0 10px 0;
+	font-size:1.2em;
+	cursor:pointer;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#friends_collections_accordian li h2:hover {
+	background:#333333;
+	color:white;
+}
+#friends_collections_accordian .friends_picker {
+	background:white;
+	padding:0;
+	display:none;
+}
+#friends_collections_accordian .friends_collections_controls {
+	font-size:70%;
+	float:right;
+}
+#friends_collections_accordian .friends_collections_controls a {
+	color:#999999;
+	font-weight:normal;
+}
+
+
+/* ***************************************
+	FRIENDS PICKER SLIDER
+*************************************** */
+.friendsPicker_container h3 {
+	font-size:4em !important;
+	text-align: left;
+	margin:0 0 10px 0 !important;
+	color:#999999 !important;
+	background: none !important;
+	padding:0 !important;
+}
+.friendsPicker .friendsPicker_container .panel ul {
+	text-align: left;
+	margin: 0;
+	padding:0;
+}
+.friendsPicker_wrapper {
+	margin: 0;
+	padding:0;
+	position: relative;
+	width: 100%;
+}
+.friendsPicker {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding:0;
+	width: 678px;
+
+	height: auto;
+	background: #dedede;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+.friendspicker_savebuttons {
+	background: white;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	margin:0 10px 10px 10px;
+}
+.friendsPicker .friendsPicker_container { /* long container used to house end-to-end panels. Width is calculated in JS  */
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	list-style-type: none;
+}
+.friendsPicker .friendsPicker_container .panel {
+	float:left;
+	height: 100%;
+	position: relative;
+	width: 678px;
+	margin: 0;
+	padding:0;
+}
+.friendsPicker .friendsPicker_container .panel .wrapper {
+	margin: 0;
+	padding:4px 10px 10px 10px;
+	min-height: 230px;
+}
+.friendsPickerNavigation {
+	margin: 0 0 10px 0;
+	padding:0;
+}
+.friendsPickerNavigation ul {
+	list-style: none;
+	padding-left: 0;
+}
+.friendsPickerNavigation ul li {
+	float: left;
+	margin:0;
+	background:white;
+}
+.friendsPickerNavigation a {
+	font-weight: bold;
+	text-align: center;
+	background: white;
+	color: #999999;
+	text-decoration: none;
+	display: block;
+	padding: 0;
+	width:20px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+.tabHasContent {
+	background: white; color:#333333 !important;
+}
+.friendsPickerNavigation li a:hover {
+	background: #333333;
+	color:white !important;
+}
+.friendsPickerNavigation li a.current {
+	background: #4690D6;
+	color:white !important;
+}
+.friendsPickerNavigationAll {
+	margin:0px 0 0 20px;
+	float:left;
+}
+.friendsPickerNavigationAll a {
+	font-weight: bold;
+	text-align: left;
+	font-size:0.8em;
+	background: white;
+	color: #999999;
+	text-decoration: none;
+	display: block;
+	padding: 0 4px 0 4px;
+	width:auto;
+}
+.friendsPickerNavigationAll a:hover {
+	background: #4690D6;
+	color:white;
+}
+.friendsPickerNavigationL, .friendsPickerNavigationR {
+	position: absolute;
+	top: 46px;
+	text-indent: -9000em;
+}
+.friendsPickerNavigationL a, .friendsPickerNavigationR a {
+	display: block;
+	height: 43px;
+	width: 43px;
+}
+.friendsPickerNavigationL {
+	right: 48px;
+	z-index:1;
+}
+.friendsPickerNavigationR {
+	right: 0;
+	z-index:1;
+}
+.friendsPickerNavigationL {
+	background: url("http://www.redciclista.com/_graphics/friends_picker_arrows.gif") no-repeat left top;
+}
+.friendsPickerNavigationR {
+	background: url("http://www.redciclista.com/_graphics/friends_picker_arrows.gif") no-repeat -60px top;
+}
+.friendsPickerNavigationL:hover {
+	background: url("http://www.redciclista.com/_graphics/friends_picker_arrows.gif") no-repeat left -44px;
+}
+.friendsPickerNavigationR:hover {
+	background: url("http://www.redciclista.com/_graphics/friends_picker_arrows.gif") no-repeat -60px -44px;
+}
+.friends_collections_controls a.delete_collection {
+	display:block;
+	cursor: pointer;
+	width:14px;
+	height:14px;
+	margin:2px 3px 0 0;
+	background: url("http://www.redciclista.com/_graphics/icon_customise_remove.png") no-repeat 0 0;
+}
+.friends_collections_controls a.delete_collection:hover {
+	background-position: 0 -16px;
+}
+.friendspicker_savebuttons .submit_button,
+.friendspicker_savebuttons .cancel_button {
+	margin:5px 20px 5px 5px;
+}
+
+#collectionMembersTable {
+	background: #dedede;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	margin:10px 0 0 0;
+	padding:10px 10px 0 10px;
+}
+
+
+/* ***************************************
+	WIDGET PICKER (PROFILE and DASHBOARD)
+*************************************** */
+/* 'edit page' button */
+a.toggle_customise_edit_panel {
+	float:right;
+	clear:right;
+	color: #4690d6;
+	background: white;
+	border:1px solid #cccccc;
+	padding: 5px 10px 5px 10px;
+	margin:0 0 20px 0;
+	width:280px;
+	text-align: left;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+a.toggle_customise_edit_panel:hover {
+	color: #ffffff;
+	background: #0054a7;
+	border:1px solid #0054a7;
+	text-decoration:none;
+}
+#customise_editpanel {
+	display:none;
+	margin: 0 0 20px 0;
+	padding:10px;
+	background: #dedede;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+/* Top area - instructions */
+.customise_editpanel_instructions {
+	width:690px;
+	padding:0 0 10px 0;
+}
+.customise_editpanel_instructions h2 {
+	padding:0 0 10px 0;
+}
+.customise_editpanel_instructions p {
+	margin:0 0 5px 0;
+	line-height: 1.4em;
+}
+
+/* RHS (widget gallery area) */
+#customise_editpanel_rhs {
+	float:right;
+	width:230px;
+	background:white;
+}
+#customise_editpanel #customise_editpanel_rhs h2 {
+	color:#333333;
+	font-size: 1.4em;
+	margin:0;
+	padding:6px;
+}
+#widget_picker_gallery {
+	border-top:1px solid #cccccc;
+	background:white;
+	width:210px;
+	height:340px;
+	padding:10px;
+	overflow:scroll;
+	overflow-x:hidden;
+}
+
+/* main page widget area */
+#customise_page_view {
+	width:656px;
+	padding:10px;
+	margin:0 0 10px 0;
+	background:white;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+#customise_page_view h2 {
+	border-top:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-left:1px solid #cccccc;
+	margin:0;
+	padding:5px;
+	width:200px;
+	color: #0054a7;
+	background: #dedede;
+	font-size:1.25em;
+	line-height: 1.2em;
+}
+#profile_box_widgets {
+	width:422px;
+	margin:0 10px 10px 0;
+	padding:5px 5px 0px 5px;
+	min-height: 50px;
+	border:1px solid #cccccc;
+	background: #dedede;
+}
+#customise_page_view h2.profile_box {
+	width:422px;
+	color: #999999;
+}
+#profile_box_widgets p {
+	color:#999999;
+}
+#leftcolumn_widgets {
+	width:200px;
+	margin:0 10px 0 0;
+	padding:5px 5px 40px 5px;
+	min-height: 190px;
+	border:1px solid #cccccc;
+}
+#middlecolumn_widgets {
+	width:200px;
+	margin:0 10px 0 0;
+	padding:5px 5px 40px 5px;
+	min-height: 190px;
+	border:1px solid #cccccc;
+}
+#rightcolumn_widgets {
+	width:200px;
+	margin:0;
+	padding:5px 5px 40px 5px;
+	min-height: 190px;
+	border:1px solid #cccccc;
+}
+#rightcolumn_widgets.long {
+	min-height: 288px;
+}
+/* IE6 fix */
+* html #leftcolumn_widgets {
+	height: 190px;
+}
+* html #middlecolumn_widgets {
+	height: 190px;
+}
+* html #rightcolumn_widgets {
+	height: 190px;
+}
+* html #rightcolumn_widgets.long {
+	height: 338px;
+}
+
+#customise_editpanel table.draggable_widget {
+	width:200px;
+	background: #cccccc;
+	margin: 10px 0 0 0;
+	vertical-align:text-top;
+	border:1px solid #cccccc;
+}
+#widget_picker_gallery table.draggable_widget {
+	width:200px;
+	background: #cccccc;
+	margin: 10px 0 0 0;
+}
+
+/* take care of long widget names */
+#customise_editpanel table.draggable_widget h3 {
+	word-wrap:break-word;/* safari, webkit, ie */
+	width:140px;
+	line-height: 1.1em;
+	overflow: hidden;/* ff */
+	padding:4px;
+}
+#widget_picker_gallery table.draggable_widget h3 {
+	word-wrap:break-word;
+	width:145px;
+	line-height: 1.1em;
+	overflow: hidden;
+	padding:4px;
+}
+#customise_editpanel img.more_info {
+	background: url(http://www.redciclista.com/_graphics/icon_customise_info.gif) no-repeat top left;
+	cursor:pointer;
+}
+#customise_editpanel img.drag_handle {
+	background: url(http://www.redciclista.com/_graphics/icon_customise_drag.gif) no-repeat top left;
+	cursor:move;
+}
+#customise_editpanel img {
+	margin-top:4px;
+}
+#widget_moreinfo {
+	position:absolute;
+	border:1px solid #333333;
+	background:#e4ecf5;
+	color:#333333;
+	padding:5px;
+	display:none;
+	width: 200px;
+	line-height: 1.2em;
+}
+/* droppable area hover class  */
+.droppable-hover {
+	background:#bbdaf7;
+}
+/* target drop area class */
+.placeholder {
+	border:2px dashed #AAA;
+	width:196px !important;
+	margin: 10px 0 10px 0;
+}
+/* class of widget while dragging */
+.ui-sortable-helper {
+	background: #4690d6;
+	color:white;
+	padding: 4px;
+	margin: 10px 0 0 0;
+	width:200px;
+}
+/* IE6 fix */
+* html .placeholder {
+	margin: 0;
+}
+/* IE7 */
+*:first-child+html .placeholder {
+	margin: 0;
+}
+/* IE6 fix */
+* html .ui-sortable-helper h3 {
+	padding: 4px;
+}
+* html .ui-sortable-helper img.drag_handle, * html .ui-sortable-helper img.remove_me, * html .ui-sortable-helper img.more_info {
+	padding-top: 4px;
+}
+/* IE7 */
+*:first-child+html .ui-sortable-helper h3 {
+	padding: 4px;
+}
+*:first-child+html .ui-sortable-helper img.drag_handle, *:first-child+html .ui-sortable-helper img.remove_me, *:first-child+html .ui-sortable-helper img.more_info {
+	padding-top: 4px;
+}
+
+
+/* ***************************************
+	BREADCRUMBS
+*************************************** */
+#pages_breadcrumbs {
+	font-size: 80%;
+	color:#bababa;
+	padding:0;
+	margin:2px 0 0 10px;
+}
+#pages_breadcrumbs a {
+	color:#999999;
+	text-decoration: none;
+}
+#pages_breadcrumbs a:hover {
+	color: #0054a7;
+	text-decoration: underline;
+}
+
+
+/* ***************************************
+	MISC.
+*************************************** */
+/* general page titles in main content area */
+#content_area_user_title h2 {
+	margin:0 0 0 8px;
+	padding:5px;
+	color:#0054A7;
+	font-size:1.35em;
+	line-height:1.2em;
+}
+/* reusable generic collapsible box */
+.collapsible_box {
+	background:#dedede;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding:5px 10px 5px 10px;
+	margin:4px 0 4px 0;
+	display:none;
+}
+a.collapsibleboxlink {
+	cursor:pointer;
+}
+
+/* tag icon */
+.object_tag_string {
+	background: url(http://www.redciclista.com/_graphics/icon_tag.gif) no-repeat left 2px;
+	padding:0 0 0 14px;
+	margin:0;
+}
+
+/* profile picture upload n crop page */
+#profile_picture_form {
+	height:145px;
+}
+#current_user_avatar {
+	float:left;
+	width:160px;
+	height:130px;
+	border-right:1px solid #cccccc;
+	margin:0 20px 0 0;
+}
+#profile_picture_croppingtool {
+	border-top: 1px solid #cccccc;
+	margin:20px 0 0 0;
+	padding:10px 0 0 0;
+}
+#profile_picture_croppingtool #user_avatar {
+	float: left;
+	margin-right: 20px;
+}
+#profile_picture_croppingtool #applycropping {
+
+}
+#profile_picture_croppingtool #user_avatar_preview {
+	float: left;
+	position: relative;
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+}
+
+
+/* ***************************************
+	SETTINGS and ADMIN
+*************************************** */
+.admin_statistics,
+.admin_users_online,
+.usersettings_statistics,
+.admin_adduser_link,
+#add-box,
+#search-box,
+#logbrowser_search_area {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	background:white;
+	margin:0 10px 10px 10px;
+	padding:10px;
+}
+
+.usersettings_statistics h3,
+.admin_statistics h3,
+.admin_users_online h3,
+.user_settings h3,
+.notification_methods h3 {
+	background:#e4e4e4;
+	color:#333333;
+	font-size:1.1em;
+	line-height:1em;
+	margin:0 0 10px 0;
+	padding:5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+h3.settings {
+	background:#e4e4e4;
+	color:#333333;
+	font-size:1.1em;
+	line-height:1em;
+	margin:10px 0 4px 0;
+	padding:5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+.admin_users_online .profile_status {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	background:#bbdaf7;
+	line-height:1.2em;
+	padding:2px 4px;
+}
+.admin_users_online .profile_status span {
+	font-size:90%;
+	color:#666666;
+}
+.admin_users_online  p.owner_timestamp {
+	padding-left:3px;
+}
+
+
+.admin_debug label,
+.admin_usage label {
+	color:#333333;
+	font-size:100%;
+	font-weight:normal;
+}
+
+.admin_usage {
+	border-bottom:1px solid #cccccc;
+	padding:0 0 20px 0;
+}
+.usersettings_statistics .odd,
+.admin_statistics .odd {
+
+}
+.usersettings_statistics .even,
+.admin_statistics .even {
+
+}
+.usersettings_statistics td,
+.admin_statistics td {
+	padding:2px 4px 2px 4px;
+	border-bottom:1px solid #cccccc;
+}
+.usersettings_statistics td.column_one,
+.admin_statistics td.column_one {
+	width:200px;
+}
+.usersettings_statistics table,
+.admin_statistics table {
+	width:100%;
+}
+.usersettings_statistics table,
+.admin_statistics table {
+	border-top:1px solid #cccccc;
+}
+.usersettings_statistics table tr:hover,
+.admin_statistics table tr:hover {
+	background: #E4E4E4;
+}
+.admin_users_online .search_listing {
+	margin:0 0 5px 0;
+	padding:5px;
+	border:2px solid #cccccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+
+
+/* force tinyMCE editor initial width for safari */
+.mceLayout {
+	width:683px;
+}
+p.longtext_editarea {
+	margin:0 !important;
+}
+.toggle_editor_container {
+	margin:0 0 15px 0;
+}
+/* add/remove longtext tinyMCE editor */
+a.toggle_editor {
+	display:block;
+	float:right;
+	text-align:right;
+	color:#666666;
+	font-size:1em;
+	font-weight:normal;
+}
+
+div.ajax_loader {
+	background: white url(http://www.redciclista.com/_graphics/ajax_loader.gif) no-repeat center 30px;
+	width:auto;
+	height:100px;
+	margin:0 10px 0 10px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+
+
+/* reusable elgg horizontal tabbed navigation
+(used on friends collections, external pages, and riverdashboard mods)
+*/
+#elgg_horizontal_tabbed_nav {
+	margin:0 0 5px 0;
+	padding: 0;
+	border-bottom: 2px solid #cccccc;
+	display:table;
+	width:100%;
+}
+#elgg_horizontal_tabbed_nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#elgg_horizontal_tabbed_nav li {
+	float: left;
+	border: 2px solid #cccccc;
+	border-bottom-width: 0;
+	background: #eeeeee;
+	margin: 0 0 0 10px;
+	-moz-border-radius-topleft:5px;
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+}
+#elgg_horizontal_tabbed_nav a {
+	text-decoration: none;
+	display: block;
+	padding:3px 10px 0 10px;
+	color: #999999;
+	text-align: center;
+	height:21px;
+}
+/* IE6 fix */
+* html #elgg_horizontal_tabbed_nav a { display: inline; }
+
+#elgg_horizontal_tabbed_nav a:hover {
+	color: #4690d6;
+	background: #dedede;
+}
+#elgg_horizontal_tabbed_nav .selected {
+	border-color: #cccccc;
+	background: white;
+}
+#elgg_horizontal_tabbed_nav .selected a {
+	position: relative;
+	top: 2px;
+	background: white;
+	color: #4690d6;
+}
+/* IE6 fix */
+* html #elgg_horizontal_tabbed_nav .selected a { top: 3px; }
+
+
+
+
+/* ***************************************
+	Auto Suggest Boxes
+*************************************** */
+
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/*
+	if width will be 100% horizontal scrollbar will apear
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/*
+	it is very important, if line-height not setted or setted
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background: white url(http://www.redciclista.com/_graphics/indicator.gif) right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #eee;
+}
+
+.ac_over {
+	background-color: #0A246A;
+	color: white;
+}
+
+.autocomplete {
+	width:300px;
+}
+
+.ac_results strong {
+	font-weight: bold;
+}
+
+.user_picker .user_picker_entry {
+	clear: both;
+	padding: 1em;
+}
+
+.livesearch_icon {
+	float: left;
+	padding-right: 1em;
+}
+
+.draggable {
+	cursor: move;
+}
+
+#profile_icon_wrapper {
+	float:left;
+}
+	
+.usericon {
+	position:relative;
+}
+
+.avatar_menu_button {
+	width:15px;
+	height:15px;
+	position:absolute;
+	cursor:pointer;
+	display:none;
+	right:0;
+	bottom:0;
+}
+.avatar_menu_arrow {
+	background: url(http://www.redciclista.com/_graphics/avatar_menu_arrows.gif) no-repeat left top;
+	width:15px;
+	height:15px;
+}
+.avatar_menu_arrow_on {
+	background: url(http://www.redciclista.com/_graphics/avatar_menu_arrows.gif) no-repeat left -16px;
+	width:15px;
+	height:15px;
+}
+.avatar_menu_arrow_hover {
+	background: url(http://www.redciclista.com/_graphics/avatar_menu_arrows.gif) no-repeat left -32px;
+	width:15px;
+	height:15px;
+}
+.usericon div.sub_menu { 
+	display:none; 
+	position:absolute; 
+	padding:2px; 
+	margin:0; 
+	border-top:solid 1px #E5E5E5; 
+	border-left:solid 1px #E5E5E5; 
+	border-right:solid 1px #999999; 
+	border-bottom:solid 1px #999999;  
+	width:160px; 
+	background:#FFFFFF; 
+	text-align:left;
+}
+div.usericon a.icon img {
+	z-index:10;
+}
+
+.usericon div.sub_menu a {margin:0;padding:2px;}
+.usericon div.sub_menu a:link, 
+.usericon div.sub_menu a:visited, 
+.usericon div.sub_menu a:hover{ display:block;}	
+.usericon div.sub_menu a:hover{ background:#cccccc; text-decoration:none;}
+
+.usericon div.sub_menu h3 {
+	font-size:1.2em;
+	padding-bottom:3px;
+	border-bottom:solid 1px #dddddd;
+	color: #4690d6;
+	margin:0 !important;
+}
+.usericon div.sub_menu h3:hover {
+
+}
+
+.user_menu_addfriend,
+.user_menu_removefriend,
+.user_menu_profile,
+.user_menu_friends,
+.user_menu_friends_of,
+.user_menu_blog,
+.user_menu_file,
+.user_menu_messages,
+.user_menu_admin,
+.user_menu_pages {
+	margin:0;
+	padding:0;
+}
+.user_menu_admin {
+	border-top:solid 1px #dddddd;
+}
+.user_menu_admin a {
+	color:red;
+}
+.user_menu_admin a:hover {
+	color:white !important;
+	background:red !important;
+}
+
+.resetdefaultprofile {
+	padding:0 10px 0 10px;
+}
+.resetdefaultprofile input[type="submit"] {
+	background: #dedede;
+	border-color: #dedede;
+	color:#333333;
+}
+.resetdefaultprofile input[type="submit"]:hover {
+	background: red;
+	border-color: red;
+	color:white;
+}
+
+/* Banned user */
+#profile_banned {
+	background-color:#FF8888;
+	border:3px solid #FF0000;
+	padding:2px;
+}
+.profile_banned {
+	border:2px solid #FF6666;
+	opacity:.5;
+}
+/*
+ * imgAreaSelect default style
+ */
+
+.imgareaselect-border1 {
+	background: url(/img/imageareaselect/border-v.gif) repeat-y left top;
+}
+
+.imgareaselect-border2 {
+    background: url(/img/imageareaselect/border-h.gif) repeat-x left top;
+}
+
+.imgareaselect-border3 {
+    background: url(/img/imageareaselect/border-v.gif) repeat-y right top;
+}
+
+.imgareaselect-border4 {
+    background: url(/img/imageareaselect/border-h.gif) repeat-x left bottom;
+}
+
+.imgareaselect-border1, .imgareaselect-border2,
+.imgareaselect-border3, .imgareaselect-border4 {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.imgareaselect-handle {
+    background-color: #fff;
+    border: solid 1px #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.imgareaselect-outer {
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.imgareaselect-selection {  
+}
+#facebox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	text-align: left;
+}
+#facebox .popup {
+	position: relative;
+}
+#facebox .body {
+	padding: 10px;
+	background: white;
+	width: 730px;
+	-webkit-border-radius: 12px; 
+	-moz-border-radius: 12px;
+}
+#facebox .loading {
+	text-align: center;
+	padding: 100px 10px 100px 10px;
+}
+#facebox .image {
+	text-align: center;
+}
+#facebox .footer {
+	float: right;
+	width:22px;
+	height:22px;
+	margin:0;
+	padding:0;
+}
+#facebox .footer img.close_image {
+	background: url(http://www.redciclista.com/mod/embed/images/close_button.gif) no-repeat left top;
+}
+#facebox .footer img.close_image:hover {
+	background: url(http://www.redciclista.com/mod/embed/images/close_button.gif) no-repeat left -31px;
+}
+#facebox .footer a {
+	-moz-outline: none;
+	outline: none;
+}
+#facebox_overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+}
+.facebox_hide {
+	z-index:-100;
+}
+.facebox_overlayBG {
+	background-color: #000000;
+	z-index: 9999;
+}
+
+* html #facebox_overlay { /* ie6 hack */
+	position: absolute;
+	height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+
+/* EMBED MEDIA TABS */
+#embed_media_tabs {
+	margin:10px 0 0 10px;
+	padding:0;
+}
+#embed_media_tabs ul {
+	list-style: none;
+	padding-left: 0;
+}
+#embed_media_tabs ul li {
+	float: left;
+	margin:0;
+	background:white;
+}
+#embed_media_tabs ul li a {
+	font-weight: bold;
+	font-size:1.35em;
+	text-align: center;
+	text-decoration: none;
+	color:#b6b6b6;
+	background: white;
+	display: block;
+	padding: 0 10px 0 10px;
+	margin:0 10px 0 10px;
+	height:25px;
+	width:auto;
+	border-top:2px solid #dedede;
+	border-left:2px solid #dedede;
+	border-right:2px solid #dedede;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+}
+/* IE6 fix */
+* html #embed_media_tabs ul li a { display: inline; }
+
+#embed_media_tabs ul li a:hover {
+	background:#b6b6b6;
+	color:white;
+	border-top:2px solid #b6b6b6;
+	border-left:2px solid #b6b6b6;
+	border-right:2px solid #b6b6b6;
+}
+#embed_media_tabs ul li a.embed_tab_selected {
+	border-top:2px solid #dedede;
+	border-left:2px solid #dedede;
+	border-right:2px solid #dedede;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	background: #dedede;
+	color:#666666;
+	position: relative;
+	/* top: 2px; - only needed if selected tab needs to sit over a border */
+}
+
+#mediaUpload,
+#mediaEmbed {
+	margin:0 5px 10px 5px;
+	padding:10px;
+	border:2px solid #dedede;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	background: #dedede;
+}
+#mediaEmbed .search_listing {
+	margin:0 0 5px 0;
+	background: white;
+}
+
+h1.mediaModalTitle {
+	/* color:#0054A7; */
+	font-size:1.35em;
+	line-height:1.2em;
+	margin:0 0 0 8px;
+	padding:5px;
+}
+
+#mediaEmbed .pagination,
+#mediaUpload .pagination {
+	float:right;
+	padding:5px;
+	background:white;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+}
+#mediaUpload label {
+	font-size:120%;
+}
+#mediaEmbed p.embedInstructions {
+	margin:10px 0 5px 0;
+}
+a.embed_media {
+	margin:0;
+	float:right;
+	display:block;
+	text-align: right;
+	font-size:1.0em;
+	font-weight: normal;
+}
+label a.embed_media {
+	font-size:0.8em;
+}
+
+
+
+
+/* ***************************************
+	PAGINATION
+*************************************** */
+#mediaEmbed .pagination .pagination_number {
+	border:1px solid #999999; 
+	color:#666666;
+}
+#mediaEmbed .pagination .pagination_number:hover {
+	background:#aaaaaa; 
+	color:black;
+}
+
+#mediaEmbed .pagination .pagination_previous,
+#mediaEmbed .pagination .pagination_next {
+	border:1px solid #999999; 
+	color:#666666;
+}
+#mediaEmbed .pagination .pagination_previous:hover,
+#mediaEmbed .pagination .pagination_next:hover {
+	background:#aaaaaa; 
+	color:black;
+}
+#mediaEmbed .pagination .pagination_currentpage {
+	background:#666666; 
+	border:1px solid #666666; 
+	color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+.captcha-input-image {
+	text-align: center;
+	margin: auto;
+}
+
+
+.categories .input-checkboxes {
+	padding:0;
+	margin:2px 5px 0 0;
+}
+.categories label {
+	font-size: 100%;
+	line-height:1.2em;
+}
+
+#two_column_left_sidebar_maincontent .contentWrapper h2.categoriestitle {
+	padding: 0 0 3px 0;
+	margin:0;
+	font-size:120%;
+	color:#333333;
+}
+#two_column_left_sidebar_maincontent .contentWrapper .categories {
+	border:1px solid #CCCCCC;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
+	padding:5px;
+	margin:0 0 15px 0;	
+}
+#two_column_left_sidebar_maincontent .contentWrapper .categories p {
+	margin:0;	
+}
+#two_column_left_sidebar_maincontent .contentWrapper .blog_post .categories {
+	border:none;
+	margin:0;
+	padding:0;
+}
+
+#two_column_left_sidebar .blog_categories {
+	background:white;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+    padding:10px;
+    margin:0 10px 10px 10px;
+}
+#two_column_left_sidebar .blog_categories h2 {
+	background:none;
+	border-top:none;
+	margin:0;
+	padding:0 0 5px 0;
+	font-size:1.25em;
+	line-height:1.2em;
+	color:#0054A7;
+}
+#two_column_left_sidebar .blog_categories ul {
+	color:#0054A7;
+	margin:5px 0 0 0;
+}
+
+p.filerepo_owner {
+	margin:0;
+	padding:0;
+}
+.filerepo_owner_details {
+	margin:0;
+	padding:0;
+	line-height: 1.2em;
+}
+.filerepo_owner_details small {
+	color:#666666;
+}
+.filerepo_owner .usericon {
+	margin: 3px 5px 5px 0;
+	float: left;
+}
+
+.filerepo_download a {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: white;
+	background:#4690d6;
+	border:none;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	width: auto;
+	height: 25px;
+	padding: 3px 6px 3px 6px;
+	margin:10px 0 10px 0;
+	cursor: pointer;
+}
+.filerepo_download a:hover {
+	background: black;
+	color:white;
+	text-decoration: none;
+}
+
+/* FILE REPRO WIDGET VIEW */
+.filerepo_widget_singleitem {
+	margin:0 0 5px 0;
+	padding:5px;
+	min-height:60px;
+	display:block;
+	background:white;
+   	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+}
+.filerepo_widget_singleitem_more {
+	margin:0;
+	padding:5px;
+	display:block;
+	background:white;
+   	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;	
+}
+.filerepo_listview_icon {
+	float: left;
+	margin-right: 10px;
+}
+.filerepo_timestamp {
+	color:#666666;
+	margin:0;
+}
+.filerepo_listview_desc {
+	display:none;
+	padding:0 10px 10px 0;
+	line-height: 1.2em;
+}
+.filerepo_listview_desc p {
+	color:#333333;
+}
+.filerepo_widget_content {
+	margin-left: 70px;
+}
+.filerepo_title {
+	margin:0;
+	padding:6px 5px 0 0;
+	line-height: 1.2em;
+	color:#666666;
+	font-weight: bold;
+}
+
+.collapsable_box #filerepo_widget_layout {
+	margin:0 10px 0 10px;
+	background: none;
+}
+
+/* widget gallery view */
+#filerepo_widget_layout .filerepo_widget_galleryview {
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+	background: white;
+	margin:0 0 5px 0;	
+}
+.filerepo_widget_galleryview img {
+	padding:0;
+    border:1px solid white;
+    margin:4px;
+}
+.filerepo_widget_galleryview img:hover {
+	border:1px solid #333333;
+}
+
+/* SINGLE ITEM VIEW */
+.filerepo_file {
+	background:white;
+	margin:10px 10px 0 10px;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+}
+.filerepo_file .filerepo_title_owner_wrapper {
+	min-height:60px;
+
+}
+.filerepo_title_owner_wrapper .filerepo_title,
+.filerepo_title_owner_wrapper .filerepo_owner {
+	margin-left: 70px !important;
+}
+.filerepo_file .filerepo_maincontent {
+	padding:0 20px 0 0;
+}
+.filerepo_file .filerepo_icon {
+	width: 70px;
+	position: absolute;
+	margin:10px 0 10px 10px;
+}
+.filerepo_file .filerepo_title {
+	margin:0;
+	padding:7px 4px 10px 10px;
+	line-height: 1.2em;
+}
+.filerepo_file .filerepo_owner {
+	padding:0 0 0 10px;
+}
+.filerepo_file .filerepo_description {
+	margin:10px 0 0 0;
+	padding:0 0 0 10px;
+}
+.filerepo_download,
+.filerepo_controls {
+	padding:0 0 1px 10px;
+	margin:0 0 10px 0;
+}
+.filerepo_file .filerepo_description p {
+	padding:0 0 5px 0;
+	margin:0;
+}
+.filerepo_file .filerepo_specialcontent img {
+	padding:10px;
+	margin:0 0 0 10px;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+	background: black; 
+}
+/* zaudio player */
+.filerepo_maincontent .filerepo_specialcontent {
+	margin:0 0 20px 0;
+}
+.filerepo_tags {
+	padding:0 0 10px 10px;
+	margin:0;
+}
+
+/* file repro gallery items */
+.search_gallery .filerepo_controls {
+	padding:0;
+}
+.search_gallery .filerepo_title {
+	font-weight: bold;
+	line-height: 1.1em;
+	margin:0 0 10px 0;
+}
+.filerepo_gallery_item {
+	margin:0;
+	padding:0;
+	text-align:center;
+
+}
+.filerepo_gallery_item p {
+	margin:0;
+	padding:0;
+}
+.filerepo_gallery_item .filerepo_controls {
+	margin-top:10px;
+}
+.filerepo_gallery_item .filerepo_controls a {
+	padding-right:10px;
+	padding-left:10px;
+}
+.search_gallery .filerepo_comments {
+	font-size:90%;
+}
+
+.filerepo_user_gallery_link {
+	float:right;
+	margin:5px 5px 5px 50px;
+}
+.filerepo_user_gallery_link a {
+	padding:2px 25px 5px 0;
+	background: transparent url(http://www.redciclista.com/_graphics/icon_gallery.gif) no-repeat right top;
+	display:block;
+}
+.filerepo_user_gallery_link a:hover {
+	background-position: right -40px;
+}
+
+/* IE6 */
+* html #description_tbl { width:676px !important;}
+
+
+
+
+#content_area_group_title h2 {
+	color:#0054A7;
+	font-size:1.35em;
+	line-height:1.2em;
+	margin:0 0 0 8px;
+	padding:5px;
+}
+#topic_posts #content_area_group_title h2 {
+	margin:0 0 0 0;
+}
+
+#two_column_left_sidebar_maincontent #owner_block_content {
+	margin:0 0 10px 0 !important;
+}
+
+#groups_info_column_left {
+	width:435px;
+	margin-left:230px;
+	margin-right:10px;
+}
+
+#groups_info_column_left .odd {
+	background:#E9E9E9;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+}
+#groups_info_column_left .even {
+	background:#E9E9E9;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+}
+#groups_info_column_left p {
+	margin:0 0 7px 0;
+	padding:2px 4px;
+}
+
+#groups_info_column_right {
+	float:left;
+	width:230px;
+	margin:0 0 0 10px;
+}
+#groups_info_wide p {
+	text-align: right;
+	padding-right:10px;
+}
+#group_stats {
+	width:190px;
+	background: #e9e9e9;
+	padding:5px;
+	margin:10px 0 20px 0;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+}
+#group_stats p {
+	margin:0;
+}
+#group_members {
+	margin:10px;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+	background: white;
+}
+
+#right_column {
+	clear:left;
+	float:right;
+	width:340px;
+	margin:0 10px 0 0;
+}
+#left_column {
+	width:340px;
+	float:left;
+	margin:0 10px 0 10px;
+
+}
+/* IE 6 fixes */
+* html #left_column { 
+	margin:0 0 0 5px;
+}
+* html #right_column { 
+	margin:0 5px 0 0;
+}
+
+#group_members h2,
+#right_column h2,
+#left_column h2,
+#fullcolumn h2 {
+	margin:0 0 10px 0;
+	padding:5px;
+	color:#0054A7;
+	font-size:1.25em;
+	line-height:1.2em;
+}
+#fullcolumn .contentWrapper {
+	margin:0 10px 20px 10px;
+	padding:0 0 5px;
+}
+
+.member_icon {
+	margin:0 0 6px 6px;
+	float:left;
+}
+
+/* IE6 */
+* html #topic_post_tbl { width:676px !important;}
+
+/* all browsers - force tinyMCE on edit comments to be full-width */
+.edit_forum_comments .defaultSkin table.mceLayout {
+	width: 636px !important;
+}
+
+/* topics overview page */
+#forum_topics {
+    padding:10px;
+    margin:0 10px 0 10px;
+    background:white;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;    
+}
+/* topics individual view page */
+#topic_posts {
+	margin:0 10px 5px 10px;
+}
+#topic_posts #pages_breadcrumbs {
+	margin:2px 0 0 0px;
+}
+#topic_posts form {
+    padding:10px;
+    margin:30px 0 0 0;
+    background:white;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px; 
+}
+.topic_post {
+	padding:10px;
+    margin:0 0 5px 0;
+    background:white;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;  
+}
+.topic_post .post_icon {
+    float:left;
+    margin:0 8px 4px 0;
+}
+.topic_post h2 {
+    margin-bottom:20px;
+}
+.topic_post p.topic-post-menu {
+	margin:0;
+}
+.topic_post p.topic-post-menu a.collapsibleboxlink {
+	padding-left:10px;
+}
+.topic_post table, .topic_post td {
+    border:none;
+}
+
+/* group latest discussions widget */
+#latest_discussion_widget {
+	margin:0 0 20px 0;
+	background:white;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+}
+/* group files widget */
+#filerepo_widget_layout {
+	margin:0 0 20px 0;
+	padding: 0 0 5px 0;
+	background:white;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+}
+/* group pages widget */
+#group_pages_widget {
+	margin:0 0 20px 0;
+	padding: 0 0 5px 0;
+	background:white;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+}
+#group_pages_widget .search_listing {
+	border: 2px solid #cccccc;
+}
+#right_column .filerepo_widget_singleitem {
+	background: #dedede !important;
+	margin:0 10px 5px 10px;
+}
+#left_column .filerepo_widget_singleitem {
+	background: #dedede !important;
+	margin:0 10px 5px 10px;
+}
+.forum_latest {
+	margin:0 10px 5px 10px;
+	background: #dedede;
+	padding:5px;
+   	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
+}
+.forum_latest:hover {
+
+}
+.forum_latest .topic_owner_icon {
+	float:left;
+}
+.forum_latest .topic_title {
+	margin-left:35px;
+}
+.forum_latest .topic_title p {
+	line-height: 1.0em;
+    padding:0;
+    margin:0;
+    font-weight: bold;
+}
+.forum_latest p.topic_replies {
+    padding:3px 0 0 0;
+    margin:0;
+    color:#666666;
+}
+.add_topic {
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+	background:white;
+	margin:5px 10px;
+	padding:10px 10px 10px 6px;
+}
+
+a.add_topic_button {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: white;
+	background:#4690d6;
+	border:none;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	width: auto;
+	height: auto;
+	padding: 3px 6px 3px 6px;
+	margin:0;
+	cursor: pointer;
+}
+a.add_topic_button:hover {
+	background: #0054a7;
+	color:white;
+	text-decoration: none;
+}
+
+
+
+/* latest discussion listing */
+.latest_discussion_info {
+	float:right;
+	width:300px;
+	text-align: right;
+	margin-left: 10px;
+}
+.groups .search_listing br {
+	height:0;
+	line-height:0;
+}
+span.timestamp {
+	color:#666666;
+	font-size: 90%;
+}
+.latest_discussion_info .timestamp {
+	font-size: 0.85em;
+}
+/* new groups page */
+.groups .search_listing {
+	border:2px solid #cccccc;
+	margin:0 0 5px 0;
+}
+.groups .search_listing:hover {
+	background:#dedede;
+}
+.groups .group_count {
+	font-weight: bold;
+	color: #666666;
+	margin:0 0 5px 4px;
+}
+.groups .search_listing_info {
+	color:#666666;
+}
+.groupdetails {
+	float:right;
+}
+.groupdetails p {
+	margin:0;
+	padding:0;
+	line-height: 1.1em;
+	text-align: right;
+}
+#groups_closed_membership {
+	margin:0 10px 20px 10px;
+	padding: 3px 5px 5px 5px;
+	background:#bbdaf7;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;	
+}
+#groups_closed_membership p {
+	margin:0;
+}
+
+/* groups membership widget */
+.groupmembershipwidget .contentWrapper {
+	margin:0 10px 5px 10px;
+}
+.groupmembershipwidget .contentWrapper .groupicon {
+	float:left;
+	margin:0 10px 0 0;
+}
+.groupmembershipwidget .search_listing_info p {
+	color: #666666;
+}
+.groupmembershipwidget .search_listing_info span {
+	font-weight: bold;
+}
+
+/* groups sidebar */
+.featuredgroups .contentWrapper {
+	margin:0 0 10px 0;
+}
+.featuredgroups .contentWrapper .groupicon {
+	float:left;
+	margin:0 10px 0 0;
+}
+.featuredgroups .contentWrapper p {
+	margin: 0;
+	line-height: 1.2em;
+	color:#666666;
+}
+.featuredgroups .contentWrapper span {
+	font-weight: bold;
+}
+#groupssearchform {
+	border-bottom: 1px solid #cccccc;
+	margin-bottom: 10px;
+}
+#groupssearchform input[type="submit"] {
+	padding:2px;
+	height:auto;
+	margin:4px 0 5px 0;
+}
+.sidebarBox #owner_block_submenu {
+	margin:5px 0 0 0;
+}
+
+/* delete post */
+.delete_discussion {
+	
+}
+.delete_discussion a {
+	display:block;
+	float:right;
+	cursor: pointer;
+	width:14px;
+	height:14px;
+	margin:0;
+	background: url("http://www.redciclista.com/_graphics/icon_customise_remove.png") no-repeat 0 0;
+}
+.delete_discussion a:hover {
+	background-position: 0 -16px;
+	text-decoration: none;
+}
+/* IE6 */
+* html .delete_discussion a { font-size: 1px; }
+/* IE7 */
+*:first-child+html .delete_discussion a { font-size: 1px; }
+
+/* delete group button */
+#delete_group_option input[type="submit"] {
+	background:#dedede;
+	border-color:#dedede;
+	color:#333333; 
+	margin:0;
+	float:right;
+	clear:both;
+}
+#delete_group_option input[type="submit"]:hover {
+	background:red;
+	border-color:red;
+	color:white;
+}
+
+#groupsearchform .search_input {
+	width:176px;
+}
+
+#groups_member_link {
+	padding-bottom: 5px;
+	text-align: center;
+}
+
+.group_widget {
+	margin:0 0 20px 0;
+	padding: 0 0 5px 0;
+	background:white;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+.group_widget .search_listing {
+border:2px solid #CCCCCC;
+}
+#logbrowserSearchform {
+	padding: 10px;
+	background-color: #dedede;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+}
+
+.log_entry {
+	width: 699px;
+	font-size: 80%;
+	background:white;
+	margin:0 10px 5px 10px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
+	border:1px solid white;
+}
+.log_entry td {
+}
+
+.log_entry_user {
+	width: 120px;
+}
+
+.log_entry_time {
+	width: 210px;
+	padding:2px;
+}
+
+.log_entry_item {
+	
+}
+
+.log_entry_action {
+	width: 75px;
+}
+/*-------------------------------
+MESSAGING PLUGIN
+-------------------------------*/
+#messages {
+	margin:0 10px 0 10px;
+}
+.actiontitle {
+	font-weight: bold;
+	font-size: 110%;
+	margin: 0 0 10px 0;
+}
+#messages .pagination {
+	margin:5px 0 5px 0;
+}
+#messages input[type="checkbox"] {
+	margin:0;
+	padding:0;
+	border:none;
+}
+.messages_buttonbank {
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+	background:white;
+	margin:5px 10px;
+	padding:5px;
+	text-align: right;
+}
+.messages_buttonbank input {
+	margin:0 0 0 10px;
+}
+.messages_buttonbank input[type="button"] {
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #4690D6;
+	background:#dddddd;
+	border: 1px solid #999999;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
+	width: auto;
+	height: 25px;
+	padding: 2px 6px 2px 6px;
+	margin:0 0 0 10px;
+	cursor: pointer;
+}
+.messages_buttonbank input[type="button"]:hover {
+	background: #0054a7;
+	border: 1px solid #0054a7;
+	color:white;
+}
+
+#messages td {
+	text-align: left;
+	vertical-align:middle;
+	padding: 5px;
+}
+#messages .message_sent {
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	margin-bottom: 5px;
+	background: white;
+	border:1px solid #cccccc; 	
+}
+#messages .message_notread {
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	margin-bottom: 5px;
+	background: #F7DAD8;
+	border:1px solid #ff6c7c; 
+}
+#messages .message_read {
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	margin-bottom: 5px;
+	background: white;
+	border:1px solid #cccccc; 
+}
+#messages .message_notread td {
+
+}
+#messages .message_read td {
+
+}
+
+#messages .delete_msg a {
+	display:block;
+	cursor: pointer;
+	width:14px;
+	height:14px;
+	margin:0;
+	background: url("http://www.redciclista.com/_graphics/icon_customise_remove.png") no-repeat right 0;
+	text-indent: -9000px;
+	float:right;
+}
+#messages .delete_msg a:hover {
+	background-position: right -16px;
+}
+/* IE6 */
+* html #messages .delete_msg a { background-position: right 4px; }
+* html #messages .delete_msg a:hover { background-position: right 4px; } 
+
+#messages .usericon,
+#messages .groupicon {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+#messages .msgsender {
+	color:#666666;
+	line-height: 1em;
+	margin:0;
+	padding:0;
+	float:left;
+}
+#messages .msgsender small {
+	color:#AAAAAA;
+}
+
+
+#messages .msgsubject {
+	font-size: 120%;
+	line-height: 100%;
+}
+
+.msgsubject {
+	font-weight:bold;
+}
+
+.messages_single_icon  {
+	float: left;
+	width:110px;
+}
+
+.messages_single_icon .usericon,
+.messages_single_icon .groupicon {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+
+.messages_to {
+	float: left;
+	margin-right: 10px;
+}
+
+/* view and reply to message view */
+.message_body {
+	margin-left: 120px;
+}
+.message_body .messagebody {
+	padding:0;
+	margin:10px 0 10px 0;
+	font-size: 120%;
+	border-bottom:1px solid #cccccc;
+}
+
+/* drop down message reply form */
+#message_reply_form { display:none; }
+
+.new_messages_count {
+	color:#666666;
+}
+/* tinyMCE container */
+#message_reply_editor #message_tbl {
+	width:680px !important;
+}
+/* IE6 */
+* html #message_reply_editor #message_tbl { width:676px !important;}
+
+#messages_return {
+	margin:4px 0 4px 10px;
+}
+#messages_return p {
+	margin:0;
+}
+.messages_single {
+	background: white;
+	-webkit-border-radius: 8px; 
+	-moz-border-radius: 8px;
+	margin:0 10px 10px 10px;
+	padding:10px;	
+}
+/* when displaying original msg in reply view */
+.previous_message {
+    background:#dedede;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+    padding:10px;
+    margin:0 0 20px 0;
+}
+.previous_message p {
+    padding:0;
+    margin:0 0 5px 0;
+    font-size: 100%;
+}
+
+
+
+
+#notificationstable td.sitetogglefield {
+	width:50px;
+	text-align: center;
+	vertical-align: middle;
+}
+#notificationstable td.sitetogglefield input {
+	margin-right:36px;
+	margin-top:5px;
+}
+#notificationstable td.sitetogglefield a {
+	width:46px;
+	height:24px;
+	cursor: pointer;
+	display: block;
+	outline: none;
+}
+#notificationstable td.sitetogglefield a.sitetoggleOff {
+	background: url(http://www.redciclista.com/mod/messages/graphics/icon_notifications_site.gif) no-repeat right 2px;
+}
+#notificationstable td.sitetogglefield a.sitetoggleOn {
+	background: url(http://www.redciclista.com/mod/messages/graphics/icon_notifications_site.gif) no-repeat right -36px;
+}
+
+
+
+
+
+
+.searchtype {
+background: #FFFACD;
+color: black;
+}
+
+.searchtypes {
+border: 1px #EEEEEE solid;
+padding: 4px;
+margin: 6px;
+}
+
+.searchListing {
+	display: block;
+	margin-bottom: 2em;
+}
+
+.searchMatch {
+	background-color: #FFFF66;
+}
+
+.searchMatchColor1 {
+	background-color: #FFFF66;
+}
+
+.searchMatchColor2 {
+	background-color: #A0FFFF;
+}
+
+.searchMatchColor3 {
+	background-color: #FF9999;
+}
+
+.searchMatchColor4 {
+	background-color: #FF66FF;
+}
+
+.searchMatchColor5 {
+	background-color: #99FF99;
+}
+
+.searchTitle {
+	text-decoration: underline;
+}
+
+#searchform input.search_input {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	background-color:#FFFFFF;
+	border:1px solid #BBBBBB;
+	color:#999999;
+	font-size:12px;
+	font-weight:bold;
+	margin:0pt;
+	padding:2px;
+	width:180px;
+	height:12px;
+}
+#searchform input.search_submit_button {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	color:#333333;
+	background: #cccccc;
+	border:none;
+	font-size:12px;
+	font-weight:bold;
+	margin:0px;
+	padding:2px;
+	width:auto;
+	height:18px;
+	cursor:pointer;
+}
+#searchform input.search_submit_button:hover {
+	color:#ffffff;
+	background: #4690d6;
+}
+
+
+.search_listing {
+	display: block;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	background:white;
+	margin:0 10px 5px 10px;
+	padding:5px;
+}
+
+.entity_gallery_item .search_listing {
+	background: none;
+	text-align: center;
+}
+
+/* override the entity container piece */
+.search_listing .search_listing {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+/* formatting for the search results */
+
+.search_listing .item_timestamp {
+	font-style: italic;
+}
+.uvbe_bulk_actions {
+	padding: 0 5px;
+}
+
+.uvbe_bulk_controls {
+	float: right;
+}
+
+.uvbe_admin_controls {
+	float: right;
+}
+
+.uvbe_unvalidated_user_details {
+	margin-left: 15px;
+	font-size: smaller;
+}
+
+.uvbe_unvalided_user {
+	border: 1px solid gray;
+	padding: 5px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	margin-bottom: 1em;
+}
+.container_map{
+	background: #99B3CC;
+	border-left: 5px solid #99B3CC;
+	border-right: 5px solid #99B3CC;
+	height:700px;
+	width:99%; 
+}
+
+.container_map_input, .container_map_output{
+	/*-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	background: #99B3CC;
+	padding: 7px;*/
+	height:350px;
+	width: 360px;
+}
+
+.container_map_input p input {
+	background: #999999;
+}
+
+.container_staticmap_output{
+	/*-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	background: #99B3CC;
+	padding: 7px;*/
+}
+
+.staticmap_profile {}
+.staticmap_groups {}
+.staticmap_all {
+	padding: 12px; 
+	width: 448px;
+}
+
+.interactivemap_profile {}
+.interactivemap_groups { width: 465px; }
+.interactivemap_all { margin: 12px; width: 670px; }
+
+.register_map{
+	height:388px;
+	width:388px;
+}
+
+#register-box .go_to_address input[type="text"] {
+	width: 340px;
+}
+
+.go_to_address ul {
+	padding:2px 1px;
+}
+
+.go_to_address ul li {
+	display:inline;
+}
+
+.unknow_error {
+	display: none;
+}
+
+.map_message_error {
+	color: red;
+	display: none;
+}
+
+/*Output map*/
+#profile_info_column_middle p.geo_location, 
+#groups_info_column_left p.geo_location,
+p.geo_location {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #F5F5F5;
+	margin: 4px 2px 10px;
+	padding: 2px 8px;
+}
+
+p.geo_location {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.profile_field_info .container_map_output {
+	height: 400px;
+	width:206px;
+}
+
+/*Register*/
+.map_register { width: 448px; }
+
+/*Loading*/
+.img-loading {
+	background: transparent url(http://www.redciclista.com/_graphics/ajax_loader.gif) no-repeat;
+	display: block;
+	height: 33px;
+	margin: 0px auto;
+	padding-top: 20px;
+	width: 33px;
+}	/* ---- tidypics object views ---- */
+
+#tidypics_wrapper {
+}
+
+#tidypics_breadcrumbs {
+margin:5px 0 15px 0;
+font-size:80%;
+}
+
+#tidypics_desc {
+padding:0 20px;
+font-style:italic;
+}
+
+#tidypics_image_nav {
+text-align:center;
+}
+
+#tidypics_image_wrapper {
+margin:10px 0 10px 0;
+text-align:center;
+}
+
+#tidypics_image {
+border:1px solid #dedede;
+padding:5px;
+}
+
+#tidypics_image_nav ul li {
+display:inline;
+margin-right:15px;
+}
+
+#tidypics_controls {
+text-align:center;
+margin-bottom:10px;
+}
+
+#tidypics_controls a {
+margin:10px;
+}
+
+#tidypics_controls ul {
+list-style:none; 
+margin:0px; 
+padding:8px;
+}
+
+#tidypics_controls ul li {
+padding:2px 10px 2px 22px;
+margin:2px 0px; 
+display:inline;
+}
+
+.tidypics_info {
+padding:20px;
+}
+
+#tidypics_exif {
+padding-left:20px;
+font-size:80%;
+}
+
+.tidypics_album_images {
+float:left;
+width:153px; 
+height:153px;
+margin:3px;
+padding:4px;
+border:1px solid #dedede;
+text-align:center;
+}
+
+.tidypics_album_cover {
+padding:2px;
+border:1px solid #dedede;
+margin:5px 0;
+}
+
+.tidypics_album_widget_single_item {
+margin-bottom:8px;
+}
+
+.tidypics_album_gallery_item {
+float:left;
+margin-bottom:20px;
+padding: 4px;
+text-align:center;
+width: 160px;
+}
+
+.tidypics_line_break {
+width: 100%;
+clear: both;
+}
+
+.tidypics_gallery_title {
+font-weight:bold;
+}
+
+.tidypics_popup {
+border:1px solid #3B5999; 
+width:200px; 
+position:absolute;
+z-index:10000; 
+display:none; 
+background:#ffffff; 
+padding:10px; 
+font-size:12px; 
+text-align:left;
+}
+
+/* ------ tidypics widget view ------  */
+
+#tidypics_album_widget_container {
+text-align:center;
+}
+
+.tidypics_album_widget_timestamp {
+color:#333333;
+}
+
+.tidypics_widget_latest {
+margin: 0 auto;
+width: 208px;
+}
+
+/* ---------  image upload/edit forms  ------------   */
+
+#tidpics_image_upload_list li {
+margin:3px 0;
+}
+
+.tidypics_edit_image_container {
+padding:5px;
+margin:5px 0;
+overflow:auto;
+}
+
+.tidypics_edit_images {
+float:right;
+width:160px; 
+height:160px;
+margin:4px;
+padding:5px;
+border:1px solid #dedede;
+text-align:center;
+}
+
+.tidypics_image_info {
+float:left;
+width:60%;
+}
+
+.tidypics_image_info label {
+font-size:1em;
+}
+
+.tidypics_caption_input {
+	width:98%;
+	height:100px;
+}
+
+/* ---- tidypics group css ----- */
+
+#tidypics_group_profile {
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px;
+background:white none repeat scroll 0 0;
+margin:0 0 20px;
+padding:0 0 5px;
+}
+
+
+/* ---------  tidypics river items ------------   */
+
+.river_object_image_create {
+	background: url(http://www.redciclista.com/mod/tidypics/graphics/icons/river_icon_image.gif) no-repeat left -1px;
+}
+.river_object_album_create {
+	background: url(http://www.redciclista.com/mod/tidypics/graphics/icons/river_icon_album.gif) no-repeat left -1px;
+}
+.river_object_image_comment {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_object_album_comment {
+	background: url(http://www.redciclista.com/_graphics/river_icons/river_icon_comment.gif) no-repeat left -1px;
+}
+.river_user_tag {
+	background: url(http://www.redciclista.com/mod/tidypics/graphics/icons/river_icon_tag.gif) no-repeat left -1px;
+}
+
+/* ----------- tagging ---------------- */
+#tidypics_tag_instructions {
+background:#BBDAF7; 
+border:1px solid #4690D6;  
+padding:10px;
+height:25px;
+min-width:360px;
+display:none;
+overflow:hidden; 
+position:absolute; 
+z-index:10000;
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px;
+}
+
+#tidypics_tag_instruct_text {
+padding-top: 3px;
+float: left;
+}
+
+#tidypics_tag_instruct_button_div {
+float: left;
+margin-left: 15px;
+}
+
+#tidypics_tag_instruct_button {
+margin:0;
+}
+
+#tidypics_tag_menu {
+width:240px;
+max-height:400px;
+overflow:hidden;
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px;
+}
+
+.tidypics_popup_header {
+width:100%;
+margin-bottom:10px;
+}
+
+
+#tidypics_tagmenu_left {
+width:175px;
+float:left;
+}
+
+#tidypics_tagmenu_right {
+float:left;
+}
+
+#tidypics_tagmenu_left .input-filter {
+width:150px;
+}
+
+#tidypics_tagmenu_right .submit_button {
+margin-top:2px;
+}
+
+#tidypics_delete_tag_menu {
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px;
+overflow:hidden;
+}
+
+.tidypics_tag {
+display:none;
+background:url(http://www.redciclista.com/mod/tidypics/graphics/spacer.gif); 
+border:2px solid #ffffff; 
+overflow:hidden; 
+position:absolute; 
+z-index:0;
+}
+
+.tidypics_tag_text {
+display:none;
+overflow:hidden; 
+position:absolute; 
+z-index:0;
+text-align:center;
+background:#BBDAF7;
+border:1px solid #3B5999;
+-webkit-border-radius:3px; 
+-moz-border-radius:3px;
+padding:1px;
+}
+
+#tidypics_phototags_list {
+padding:0 20px 0 20px;
+}
+
+#tidypics_phototags_list ul {
+list-style:none; 
+margin:0px; 
+padding:8px;
+}
+
+#tidypics_phototags_list ul li {
+padding-right:10px;
+margin:2px 0px; 
+display:inline;
+} 
+
+#tidypics_image_upload_list {
+list-style: none;
+}
+
+/*----- uploadify ------*/
+
+#tidypics_uploader_steps {
+list-style:none;
+}
+
+#tidypics_uploader_steps li {
+margin-bottom: 20px;
+}
+
+#tidypics_uploader_steps li a {
+font-weight:bold;
+}
+
+.tidypics_choose_button_hover {
+color:#0054a7;
+text-decoration:underline;
+}
+
+.tidypics_disable {
+color:#cccccc;
+}
+
+.tidypics_disable:hover {
+color:#cccccc;
+text-decoration:none;
+}
+
+
+.uploadifyQueueItem {
+background-color:#F5F5F5;
+border:2px solid #E5E5E5;
+font-size:11px;
+margin-top:5px;
+padding:10px;
+width:350px;
+}
+
+.uploadifyProgress {
+background-color:#FFFFFF;
+border-color:#808080 #C5C5C5 #C5C5C5 #808080;
+border-style:solid;
+border-width:1px;
+margin-top:10px;
+width:100%;
+}
+
+.uploadifyProgressBar {
+background-color: #0054a7;
+width: 1px;
+height: 3px;
+}
+
+#tidypics_uploader {
+position:relative;
+width:400px;
+min-height:20px;
+}
+
+#tidypics_choose_button {
+position:absolute;
+top:0;
+left:0;
+z-index:0;
+display:block;
+float:left;
+}
+
+#tidypics_flash_uploader {
+position:relative;
+z-index:100;
+}
+
+.uploadifyQueueItem .cancel {
+float: right;
+}
+
+.uploadifyError {
+border: 2px solid #FBCBBC;
+background-color: #FDE5DD;
+}
+
+#tidypics_album_sort {
+padding:0;
+margin:0;
+}
+
+#tidypics_album_sort li {
+float:left;
+margin:3px;
+width:161px;
+height:161px;
+}
+
+#tidypics_album_sort img {
+border:1px solid #dedede;
+padding:4px;
+}
+
+
+/* css for izap_videos */
+.izap_videos_checkboxes{
+font-size:13px;
+}
+
+.izapResetSettings{
+padding:5px;
+color:#FFFFFF;
+background-color:#FF7D7D;
+}
+
+.izapResetSettings: hover{
+color:#FFFF00;
+background-color:#FF0000;
+}
+
+#screenshot{
+	position:absolute;
+	border:2px solid #fff;
+	padding:0px;
+	display:none;
+	color:#fff;
+	}
+
+.izap_videos_selected {
+	background:#000000;
+margin:0 10px 5px 10px;
+	padding:5px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+.izap-input-radio {
+font-size: 1em;
+}
+
+#izap_widget_layout {
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+background:#FFFFFF none repeat scroll 0 0;
+margin:0 0 20px;
+border:1px solid #ccc;
+padding:0 0 5px;
+}
+
+.river_object_izap_videos_comments{
+	background:transparent url(http://www.redciclista.com/mod/izap_videos/_graphics/river_icon_comment.gif) no-repeat scroll left -1px;
+}
+
+.river_object_izap_videos_create{
+	background:transparent url(http://www.redciclista.com/mod/izap_videos/_graphics/river_icon_video.gif) no-repeat scroll left -1px;
+}
+
+.customIndexIcon {
+margin:4px;
+float:left;
+}
+
+.embedThumbs {
+margin:5px;
+padding:6px;
+float:left;
+}
+
+.izap_shares_widget_wrapper {
+	background: white;
+	margin:0 10px 5px 10px;
+	padding:5px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+.izap_shares_widget_icon {
+	float: left;
+	margin-right: 10px;
+}
+
+.izap_shares_timestamp {
+	color:#666666;
+	margin:0;
+}
+
+.izap_share_desc {
+	display:none;
+	line-height: 1.2em;
+}
+
+.izap_shares_widget_content {
+	margin-left: 35px;
+}
+
+.izap_shares_title {
+	margin:0;
+	line-height: 1.2em;
+}
+
+.notConvertedWrapper{
+background-color: #FFC4C4;
+	margin:0 10px 5px 10px;
+	padding:5px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
+
+.copied_text{
+font-size:small;
+	font-family:Arial;
+	font-style:italic;
+}
+
+.izapPlayer{
+background-color:#000000;
+color:#FFFFFF;
+}
+
+.izapProfileLink{
+border-top: dotted 1px #000000;
+border-bottom: dotted 1px #000000;
+}
+
+.izapMiniList{
+background-color: #DEDEDE;
+}
+
+.izap_server_report {
+
+}
+
+.izap_server_report .ok{
+background-color:#97FD79;
+}
+
+.izap_server_report .not_ok{
+background-color:#FD7979;
+}
+
+.izap_sever_report .column{
+width:150px;
+}
+
+.izap_credit{
+margin: 0px 10px 0px 0px;
+}
+
+.izap_small_text {
+font-size:.6em;
+font-weight:normal;
+}
+
+.izap_info_text {
+font-size:.9em;
+font-style:italic;
+color: #267F45;
+}
+
+.izap_normal_text {
+font-size:.8em;
+font-weight:normal;
+}
+
+.queue_selected {
+  background-color: #9EEABD;
+}
+
+.tab_highlight {
+  background-color: #E3938B;
+}
+
+.izap_notice{
+  color: #FF0000;
+}
+/* css for the izap_videos ends here */
+
+#notificationstable td.namefield {
+	width:250px;
+	text-align: left;
+	vertical-align: middle;
+}
+#notificationstable td.namefield p {
+	margin:0;
+	vertical-align: middle;
+	line-height: 1.1em;
+	padding:5px 0 5px 0;
+}
+#notificationstable td.namefield img {
+	padding:6px 10px 6px 3px;
+	float:left;
+}
+#notificationstable td.namefield p.namefieldlink {
+	margin:9px 0 0 0;
+}
+#notificationstable td.emailtogglefield,
+#notificationstable td.smstogglefield {
+	width:50px;
+	text-align: center;
+	vertical-align: middle;
+}
+#notificationstable td.spacercolumn {
+	width:30px;
+}
+#notificationstable td {
+	border-bottom: 1px solid silver;
+}
+#notificationstable td.emailtogglefield input {
+	margin-right:36px;
+	margin-top:5px;
+}
+#notificationstable td.emailtogglefield a {
+	width:46px;
+	height:24px;
+	cursor: pointer;
+	display: block;
+	outline: none;
+}
+#notificationstable td.emailtogglefield a.emailtoggleOff {
+	background: url(http://www.redciclista.com/mod/notifications/graphics/icon_notifications_email.gif) no-repeat right 2px;
+}
+#notificationstable td.emailtogglefield a.emailtoggleOn {
+	background: url(http://www.redciclista.com/mod/notifications/graphics/icon_notifications_email.gif) no-repeat right -36px;
+}
+
+.notification_collections,
+.notification_personal {
+	margin-bottom: 25px;
+}
+
+.settings_form .friendsPicker_container h3 {
+	color:#999999;
+	font-size:3em;
+	margin:0 0 20px;
+	text-align:left;
+	background: none;
+	border-bottom: none;
+}
+
+
+
+blockquote {
+    margin:10px;
+    border:1px solid #efefef;
+    padding:4px;
+}
+
+strong {
+    font-weight:bold;
+}
+
+ul {
+   list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
